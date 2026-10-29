@@ -1,15 +1,68 @@
-# FC Portugal Codebase <br> for RoboCup 3D Soccer Simulation League
+# Walker: imitation learning for RoboCup locomotion
+
+Research repository: [TafaraC/Walker](https://github.com/TafaraC/Walker).
+This project studies behavioural cloning, mixed DAgger and GAIL using the native
+FC Portugal walking controller as an expert, with controlled surface experiments,
+mechanical evaluation and representation probing.
+
+## Credit and licence
+
+Built on the [FC Portugal Codebase](https://github.com/m-abr/FCPCodebase).
+Credit for the original agent, walking controller, gait/IK machinery and supporting
+code belongs to the FC Portugal authors and contributors. Their Git history,
+copyright notices and original academic citation below are retained.
+
+The derived software is distributed under the **GNU General Public License,
+version 3**, provided in [LICENSE](LICENSE). Research additions and modifications
+are described in [ATTRIBUTION.md](ATTRIBUTION.md); this repository is a modified
+research version of the upstream project.
+
+## Research entry points
+
+- [Paper draft](evaluation/FINAL_PAPER_DRAFT.md) and [LaTeX package instructions](evaluation/paper/README.md).
+- [Presentation](evaluation/presentation/CONSOLIDATED_PAPER_SLIDES.pdf) and [slide explanations](evaluation/presentation/CONSOLIDATED_PAPER_NOTES.md).
+- [Findings and numerical results](evaluation/CONSOLIDATED_RESULTS_REPORT_2026-10-15.md) and [optimization controls](evaluation/SUBMISSION_FEEDBACK_RESPONSE_2026-10-28.md).
+- [Setup workbook](docs/learning/README.md), [commands](COMMANDS.md) and [repository/artifact guide](REPOSITORY.md).
+
+Large datasets, experiment outputs and learned checkpoints are distributed
+separately from source control; artifact download details are pending.
 
 ![](https://s5.gifyu.com/images/Siov6.gif)
 
-## About
+## About the upstream FC Portugal codebase
 
 The FC Portugal Codebase was mainly written in Python, with some C++ modules. It was created to simplify and speed up the development of a team for participating in the RoboCup 3D Soccer Simulation League. We hope this release helps existing teams transition to Python more easily, and provides new teams with a robust and modern foundation upon which they can build new features.
 
 
 ## Documentation
 
+The new standardized-budget study has two owned-server entry points:
+`run_training.sh` and `run_evaluation_all.sh`. See
+[consolidated/README.md](consolidated/README.md) for budgets, model lineage,
+context variants, evaluation schedules and smoke commands.
+
+For executable training, evaluation, probing and RoboViz demo commands, see
+[COMMANDS.md](COMMANDS.md).
+
 The documentation is available [here](https://docs.google.com/document/d/1aJhwK2iJtU-ri_2JOB8iYvxzbPskJ8kbk_4rb3IK3yc/edit)
+
+The local BC, DAgger, and GAIL technical and execution guide is available in
+[PIPELINES.md](PIPELINES.md).
+
+Experiment progress, completed work, and the staged robustness plan are tracked
+in [EXPERIMENT_PHASES.md](EXPERIMENT_PHASES.md).
+
+For a new-session summary and the exact next commands, read
+[SESSION_HANDOFF.md](SESSION_HANDOFF.md).
+
+The implementation challenge log and unresolved research risks are maintained in
+[CHALLENGES.md](CHALLENGES.md).
+
+## Live walking demo
+
+With SimSpark and RoboViz running, execute `./run_demo.sh` and choose an agent
+by number. Each demo runs 1,500 active steps at 50 Hz (30 seconds, plus startup
+and any recovery). See [PIPELINES.md](PIPELINES.md) for setup and menu options.
 
 ## Features
 

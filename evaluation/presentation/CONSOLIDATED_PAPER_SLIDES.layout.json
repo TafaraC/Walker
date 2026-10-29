@@ -1,0 +1,117 @@
+[
+  {
+    "slide": 0,
+    "title": "0 \u00b7 Imitating RoboCup locomotion",
+    "bottom_y": 459.9
+  },
+  {
+    "slide": 1,
+    "title": "1 \u00b7 Redid experiments \u2014 how and why",
+    "bottom_y": 308.9
+  },
+  {
+    "slide": 2,
+    "title": "2 \u00b7 Research questions and evidence",
+    "bottom_y": 264.0
+  },
+  {
+    "slide": 3,
+    "title": "3 \u00b7 Experimental progression",
+    "bottom_y": 154.8
+  },
+  {
+    "slide": 4,
+    "title": "4 \u00b7 Standardised allocations",
+    "bottom_y": 183.5
+  },
+  {
+    "slide": 5,
+    "title": "5 \u00b7 Success measures",
+    "bottom_y": 171.6
+  },
+  {
+    "slide": 6,
+    "title": "6 \u00b7 Original scene: initial allocation",
+    "bottom_y": 62.3
+  },
+  {
+    "slide": 7,
+    "title": "7 \u00b7 Frozen policies on varied surfaces",
+    "bottom_y": 92.0
+  },
+  {
+    "slide": 8,
+    "title": "8 \u00b7 Varied training: the initial comparison",
+    "bottom_y": 62.3
+  },
+  {
+    "slide": 9,
+    "title": "9 \u00b7 Explicit slip supply",
+    "bottom_y": 62.3
+  },
+  {
+    "slide": 10,
+    "title": "10 \u00b7 Remove original pretraining",
+    "bottom_y": 308.9
+  },
+  {
+    "slide": 11,
+    "title": "11 \u00b7 Without pretraining: results and meaning",
+    "bottom_y": 226.8
+  },
+  {
+    "slide": 12,
+    "title": "12 \u00b7 Mechanical results",
+    "bottom_y": 92.0
+  },
+  {
+    "slide": 13,
+    "title": "13 \u00b7 Probes interpret the behavioural results",
+    "bottom_y": 238.7
+  },
+  {
+    "slide": 14,
+    "title": "14 \u00b7 Probing interprets the prior model results",
+    "bottom_y": 92.0
+  },
+  {
+    "slide": 15,
+    "title": "15 \u00b7 Pretraining: fidelity is not global similarity",
+    "bottom_y": 146.3
+  },
+  {
+    "slide": 16,
+    "title": "16 \u00b7 Feedback: match optimizer updates",
+    "bottom_y": 62.3
+  },
+  {
+    "slide": 17,
+    "title": "17 \u00b7 Feedback: separate exposure from pretraining",
+    "bottom_y": 62.3
+  },
+  {
+    "slide": 18,
+    "title": "18 \u00b7 Feedback: does the engine solve the task alone?",
+    "bottom_y": 62.3
+  },
+  {
+    "slide": 19,
+    "title": "19 \u00b7 Feedback: recover fidelity/resource curves",
+    "bottom_y": 62.3
+  },
+  {
+    "slide": 20,
+    "title": "20 \u00b7 Paper conclusions after the controls",
+    "bottom_y": 231.2
+  },
+  {
+    "slide": 21,
+    "title": "21 \u00b7 Boundaries and proposal deviations",
+    "bottom_y": 249.0
+  },
+  {
+    "slide": 22,
+    "title": "22 \u00b7 Outside the paper \u2014 worth continuing",
+    "bottom_y": 189.7
+  }
+]

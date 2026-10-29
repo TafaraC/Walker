@@ -1,29 +1,103 @@
+# Python caches, local environments and build outputs
 __pycache__/
-config.json
+*.py[cod]
+.venv/
+venv/
+env/
+.conda/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+*.egg-info/
+/build/
+/dist/
 
-# ignore logs but not logger
-/logs/*
-!/logs/*.py
-/scripts/gyms/logs
-
-# ignore exported models
-/scripts/gyms/export
-
-# ignore shared libs and binaries and compilation info
+# Native modules must be built for the local interpreter/platform.
 *.so
+*.o
+*.a
 *.bin
 *.c_info
 *.spec
 
-# ignore profile made by python profilers
-profile
+# Large research artifacts: distribute separately with checksums.
+/experiments/
+/artifacts/
+/evaluation/raw/
+*.npz
+*.npy
+*.pth
+*.pt
+*.ckpt
+*.onnx
+*.h5
+*.hdf5
+/expert_split_metadata.json
+# Keep upstream behaviors/**/*.pkl models: the oracle requires them.
 
-# ignore hidden folders but include hidden files
-.*/
+# Runtime logs and process state
+/logs/*
+!/logs/*.py
+/scripts/gyms/logs/
+/scripts/gyms/export/
+*.log
+*.pid
+*.lock
+/profile
+/core
+/core.*
+/gail_backup_*/
+/dagger_backup_*/
+/evaluation_backup_*/
 
-# ignore test files in root folder
-/test*
+# Machine-specific configuration and credentials
+/config.json
+.env
+.env.*
+!.env.example
+!.env.template
+.codex/
+.agents/
+.aws/
+.ssh/
+.idea/
+.vscode/
 
-# ignore bundle folder but not bundle script
+# OS/editor leftovers and Windows download metadata
+.DS_Store
+Thumbs.db
+Desktop.ini
+*:Zone.Identifier
+*.swp
+*.swo
+*~
+*.tmp
+
+# Local proposal and generated bundles; keep reports and PDF figures.
+/Research_Proposal.pdf
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.mp4
+*.webm
 /bundle/*
 !/bundle/bundle.sh
+
+# LaTeX intermediates; retain sources, bibliography and final PDFs.
+*.aux
+*.bbl
+*.blg
+*.bcf
+*.fdb_latexmk
+*.fls
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+*.nav
+*.snm
+*.vrb

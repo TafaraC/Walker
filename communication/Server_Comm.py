@@ -34,7 +34,7 @@ class Server_Comm():
             except ConnectionRefusedError:
                 if not wait_for_server:
                     print("Server is down. Closing...")
-                    exit()
+                    exit(1)
                 time.sleep(1)
                 print(".",end="",flush=True)
         print("Connected agent", unum, self.socket.getsockname())
@@ -57,7 +57,7 @@ class Server_Comm():
 
         if world.team_side_is_left == None:
             print("\nError: server did not return a team side! Check server terminal!")
-            exit()
+            exit(1)
 
         # Monitor socket is shared by all agents on the same thread
         if Server_Comm.monitor_socket is None and monitor_port is not None:
@@ -103,7 +103,7 @@ class Server_Comm():
                 if self.socket.recv_into(self.rcv_buff, nbytes=msg_size, flags=socket.MSG_WAITALL) != msg_size: raise ConnectionResetError()      
             except ConnectionResetError:
                 print("\nError: socket was closed by rcssserver3d!")
-                exit()
+                exit(1)
 
             self.world_parser.parse(self.rcv_buff[:msg_size])
             if len(select([self.socket],[],[], 0.0)[0]) == 0: break
@@ -117,6 +117,27 @@ class Server_Comm():
                 self.world.log("Server_Comm.py: Received a new packet while on world.update()!")
                 self.receive()
 
+        # SimSpark continuously writes monitor frames. This client uses the
+        # monitor connection only for control commands, so discard pending
+        # output to prevent the server-side MonitorControl send buffer from
+        # filling during long synchronous collections/evaluations.
+        self._drain_monitor_socket()
+
+
+    @staticmethod
+    def _drain_monitor_socket() -> None:
+        monitor = Server_Comm.monitor_socket
+        if monitor is None:
+            return
+        try:
+            while select([monitor], [], [], 0.0)[0]:
+                if not monitor.recv(65536):
+                    break
+        except (BlockingIOError, ConnectionError, OSError):
+            # A subsequent control command or agent lifecycle transition will
+            # expose a closed monitor connection. Draining is best-effort.
+            pass
+
 
     def send_immediate(self, msg:bytes) -> None:
         ''' Commit and send immediately '''
@@ -124,7 +145,7 @@ class Server_Comm():
             self.socket.send( (len(msg)).to_bytes(4,byteorder='big') + msg ) #Add message length in the first 4 bytes
         except BrokenPipeError:
             print("\nError: socket was closed by rcssserver3d!")
-            exit()
+            exit(1)
 
 
     def send(self) -> None:
@@ -278,8 +299,20 @@ class Server_Comm():
 
     def close(self, close_monitor_socket = False):
         ''' Close agent socket, and optionally the monitor socket (shared by players running on the same thread) '''
+        try:
+            self.socket.shutdown(socket.SHUT_RDWR)
+        except OSError:
+            pass
         self.socket.close()
         if close_monitor_socket and Server_Comm.monitor_socket is not None:
+            # SimSpark can destroy its AgentControl and MonitorControl client
+            # threads concurrently when both sockets disappear in the same
+            # instant. Give AgentControl time to finish before closing monitor.
+            time.sleep(0.25)
+            try:
+                Server_Comm.monitor_socket.shutdown(socket.SHUT_RDWR)
+            except OSError:
+                pass
             Server_Comm.monitor_socket.close()
             Server_Comm.monitor_socket = None
         

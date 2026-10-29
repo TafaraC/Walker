@@ -1,0 +1,107 @@
+[
+  {
+    "page": 1,
+    "title": "Running and understanding the Walker experiments",
+    "bottom_content_y": 289.30000000000024
+  },
+  {
+    "page": 2,
+    "title": "1. What runs where?",
+    "bottom_content_y": 186.20000000000016
+  },
+  {
+    "page": 3,
+    "title": "2. Linux and shell knowledge",
+    "bottom_content_y": 227.8000000000003
+  },
+  {
+    "page": 4,
+    "title": "3. Conda, Python and the base prompt",
+    "bottom_content_y": 230.4000000000002
+  },
+  {
+    "page": 5,
+    "title": "4. Reconstructing the software environment",
+    "bottom_content_y": 219.5000000000001
+  },
+  {
+    "page": 6,
+    "title": "5. System dependencies and simulator setup",
+    "bottom_content_y": 214.30000000000024
+  },
+  {
+    "page": 7,
+    "title": "6. Synchronous simulation and surface settings",
+    "bottom_content_y": 218.70000000000016
+  },
+  {
+    "page": 8,
+    "title": "7. Native extensions and GPU checks",
+    "bottom_content_y": 292.9000000000004
+  },
+  {
+    "page": 9,
+    "title": "8. Python concepts used in these pipelines",
+    "bottom_content_y": 212.50000000000034
+  },
+  {
+    "page": 10,
+    "title": "9. Arrays, neural networks and data contracts",
+    "bottom_content_y": 222.9000000000002
+  },
+  {
+    "page": 11,
+    "title": "10. Choosing the correct experiment route",
+    "bottom_content_y": 239.80000000000024
+  },
+  {
+    "page": 12,
+    "title": "11. Current controls and the viewer",
+    "bottom_content_y": 138.3000000000003
+  },
+  {
+    "page": 13,
+    "title": "12. Read results and diagnose failures",
+    "bottom_content_y": 202.80000000000013
+  },
+  {
+    "page": 14,
+    "title": "Exercise 1. Find the real interpreter",
+    "bottom_content_y": 254.90000000000032
+  },
+  {
+    "page": 15,
+    "title": "Exercise 2. Inspect data without changing it",
+    "bottom_content_y": 230.70000000000027
+  },
+  {
+    "page": 16,
+    "title": "Exercise 3. Train a tiny regressor",
+    "bottom_content_y": 210.80000000000035
+  },
+  {
+    "page": 17,
+    "title": "Exercise 4. Count the training budget",
+    "bottom_content_y": 212.3000000000004
+  },
+  {
+    "page": 18,
+    "title": "Exercise 5. Reproducibility and diagnostic checks",
+    "bottom_content_y": 212.70000000000033
+  },
+  {
+    "page": 19,
+    "title": "Exercise 6. A safe smoke and a model demo",
+    "bottom_content_y": 256.30000000000024
+  },
+  {
+    "page": 20,
+    "title": "Answer guide and readiness checklist",
+    "bottom_content_y": 170.90000000000032
+  },
+  {
+    "page": 21,
+    "title": "Sources and further reading",
+    "bottom_content_y": 149.9000000000002
+  }
+]

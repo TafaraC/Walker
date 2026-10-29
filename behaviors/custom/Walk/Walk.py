@@ -13,6 +13,9 @@ class Walk():
         self.auto_head = True
         self.env = Env(base_agent)
         self.last_executed = 0
+        self.trajectory_buffer = []
+        self.is_collecting = False
+        self.last_obs = None
 
         with open(M.get_active_directory([
             "/behaviors/custom/Walk/walk_R0.pkl",
@@ -24,7 +27,7 @@ class Walk():
             self.model = pickle.load(f)
 
 
-    def execute(self, reset, target_2d, is_target_absolute, orientation, is_orientation_absolute, distance):
+    def observe(self, reset, target_2d, is_target_absolute, orientation, is_orientation_absolute, distance):
         '''
         Parameters
         ----------
@@ -69,14 +72,57 @@ class Walk():
         else:
             self.env.walk_rel_orientation = orientation * 0.3
 
-        #------------------------ 2. Execute behavior
-
+        #------------------------ 2. Build observation
         obs = self.env.observe(reset)
-        action = run_mlp(obs, self.model)   
+        self.last_obs = np.copy(obs)
+        return self.last_obs
+
+    def get_expert_action(self, obs=None):
+        """Query the immutable FC Portugal walk policy (the imitation oracle)."""
+        if obs is None:
+            if self.last_obs is None:
+                raise RuntimeError("observe() must be called before querying the oracle")
+            obs = self.last_obs
+        return np.asarray(run_mlp(obs, self.model), dtype=np.float32)
+
+    def execute_action(self, action):
+        """Execute a 16-D latent walk action through the original controller."""
+        action = np.asarray(action, dtype=np.float32)
+        if action.shape != (16,):
+            raise ValueError(f"Expected walk action shape (16,), got {action.shape}")
+        if not np.isfinite(action).all():
+            raise ValueError("Walk action contains NaN or infinite values")
         self.env.execute(action)
+
+    def execute(self, reset, target_2d, is_target_absolute, orientation, is_orientation_absolute, distance):
+        obs = self.observe(
+            reset, target_2d, is_target_absolute, orientation,
+            is_orientation_absolute, distance
+        )
+
+        # Get Expert Action from the pre-trained model
+        expert_action = self.get_expert_action(obs)
+
+        # Hook: Record state-action pair if collection is enabled
+        if self.is_collecting:
+            self.trajectory_buffer.append({
+                'obs': np.copy(obs),             # 63-dim state
+                'action': np.copy(expert_action)  # 16-dim expert action
+            })
+
+        # Step environment forward
+        self.execute_action(expert_action)
         
         return False
 
+    def save_trajectories(self, filepath="expert_walk_data.npz"):
+        """Saves collected state-action pairs to an NPZ file for imitation training."""
+        if not self.trajectory_buffer:
+            raise RuntimeError("No walk trajectories were collected")
+        states = np.asarray([sample['obs'] for sample in self.trajectory_buffer], dtype=np.float32)
+        actions = np.asarray([sample['action'] for sample in self.trajectory_buffer], dtype=np.float32)
+        np.savez_compressed(filepath, obs=states, actions=actions)
+        print(f"Saved {len(states)} state-action pairs to {filepath}")
 
     def is_ready(self):
         ''' Returns True if Walk Behavior is ready to start under current game/robot conditions '''

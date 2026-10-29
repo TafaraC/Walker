@@ -1,0 +1,163 @@
+{
+  "sources": {
+    "experiments/submission_controls/v1/evaluation/summary/comparison.json": "fd8ec6267abd4ef533520812f39232f475cc44c063950d013cd970486121023b",
+    "experiments/submission_controls/v1/curves/curves.json": "cfa011bdd8113685f17047d12668d5b84fbfea657e3a7acb979315deb2bda286",
+    "experiments/consolidated/v1/evaluation/all_all_correct/comparison.json": "e6077bbff3716a8befce17be9fa7106916009c63b0a507154ed9e2cf07090b8e",
+    "experiments/consolidated/v1/scratch_v1/evaluation/all_all_correct/comparison.json": "788a1fb23f05052c7920aed82591bc5422a451d050cdfa53b0e584549d1e04e7",
+    "experiments/representation_probing/consolidated_v1/report.json": "69b9a07641f6bfc70b4eac5b28be2ddfb9a255cf60e35c48a4c55a8d903ff116",
+    "experiments/consolidated/v1/scratch_v1/probing/report.json": "0aeeb19e93e5a89816b8404f1c8952d33fb90b8e1360fd71a8728ade7f928066"
+  },
+  "values": {
+    "01_budget": [
+      {
+        "suite": "original",
+        "policy": "original_hidden_42_bc",
+        "runs": 5,
+        "reused": true,
+        "total_falls": 0,
+        "active_minutes": 5.0,
+        "return_target_progress_m": 44.62974166870117,
+        "normalized_return": 1.004377538968095,
+        "held_out_expert_action_mse": 0.11046685180664062,
+        "on_policy_latent_action_mse": 0.07444484233856201,
+        "joint_occupancy_sliced_wasserstein": 0.04503357044718649,
+        "mean_forward_velocity_mps": 0.7590950965881348,
+        "mean_target_direction_error": 0.6544994711875916,
+        "falls_per_active_minute": 0.0,
+        "jerk_cost_rate_rad2_per_s6": 44995135.63184164,
+        "torso_roll_rms_deg": 2.3029457092285157,
+        "torso_pitch_rms_deg": 4.198197221755981
+      },
+      {
+        "suite": "original",
+        "policy": "original_hidden_42_dagger_mixed",
+        "runs": 5,
+        "reused": true,
+        "total_falls": 0,
+        "active_minutes": 5.0,
+        "return_target_progress_m": 44.36399383544922,
+        "normalized_return": 0.9984628630551352,
+        "held_out_expert_action_mse": 0.015345224809646608,
+        "on_policy_latent_action_mse": 0.007820998784154654,
+        "joint_occupancy_sliced_wasserstein": 0.03908934040908723,
+        "mean_forward_velocity_mps": 0.7516532659530639,
+        "mean_target_direction_error": 0.6583370327949524,
+        "falls_per_active_minute": 0.0,
+        "jerk_cost_rate_rad2_per_s6": 46474102.466433205,
+        "torso_roll_rms_deg": 2.3170013427734375,
+        "torso_pitch_rms_deg": 4.058177947998047
+      },
+      {
+        "suite": "original",
+        "policy": "bc_original_matched",
+        "runs": 5,
+        "reused": false,
+        "total_falls": 0,
+        "active_minutes": 5.0,
+        "return_target_progress_m": 43.90605545043945,
+        "normalized_return": 0.987888845042584,
+        "held_out_expert_action_mse": 0.010240124464035034,
+        "on_policy_latent_action_mse": 0.004032689426094293,
+        "joint_occupancy_sliced_wasserstein": 0.0471612972231972,
+        "mean_forward_velocity_mps": 0.7470193982124329,
+        "mean_target_direction_error": 0.6621904253959656,
+        "falls_per_active_minute": 0.0,
+        "jerk_cost_rate_rad2_per_s6": 46480679.48764409,
+        "torso_roll_rms_deg": 2.36153039932251,
+        "torso_pitch_rms_deg": 4.090518140792847
+      }
+    ],
+    "05_pretraining": {
+      "hidden": [
+        [
+          0.10900179214477536,
+          0.11361225051879884,
+          0.11268849258422849
+        ],
+        [
+          0.03851523628234864,
+          0.04672032508850096,
+          0.041075146293640126
+        ],
+        [
+          0.019968589401245122,
+          0.020024097156524655,
+          0.01985292663574219
+        ]
+      ],
+      "input": [
+        [
+          0.11030616378784182,
+          0.11388611755371097,
+          0.11258153152465818
+        ],
+        [
+          0.03446771125793457,
+          0.04643128986358642,
+          0.032337929725646974
+        ],
+        [
+          0.019929124259948736,
+          0.019901155281066892,
+          0.019739893817901612
+        ]
+      ]
+    },
+    "07_probes": {
+      "phase_sin_times_roll_deg_bc": [
+        0.6920927384508122,
+        0.690799346296147,
+        0.6904374260262356
+      ],
+      "phase_sin_times_roll_deg_dagger_mixed": [
+        0.712507392715741,
+        0.7049803567256197,
+        0.7018996251362002
+      ],
+      "phase_sin_times_roll_deg_gail_bc": [
+        0.6920108440416874,
+        0.6907845600255365,
+        0.6903536715353178
+      ],
+      "phase_sin_times_roll_deg_gail_dagger_mixed": [
+        0.7121832796168912,
+        0.7048645500495244,
+        0.7019359331406363
+      ],
+      "future_200ms_forward_velocity_mps_bc": [
+        0.6326280928647998,
+        0.633241919243799,
+        0.6332380971161569
+      ],
+      "future_200ms_forward_velocity_mps_dagger_mixed": [
+        0.6292544934898783,
+        0.6292978287039246,
+        0.6297222480784981
+      ],
+      "future_200ms_forward_velocity_mps_gail_bc": [
+        0.6326248223168058,
+        0.6332433923258918,
+        0.6332504411980768
+      ],
+      "future_200ms_forward_velocity_mps_gail_dagger_mixed": [
+        0.6292626656209408,
+        0.6293169667309636,
+        0.6297022769823678
+      ]
+    }
+  },
+  "conventions": "Means and replica points only; no invented error bars. See captions for units and populations.",
+  "figures": [
+    "01_budget.pdf",
+    "02_slip.pdf",
+    "03_continuation.pdf",
+    "04_context.pdf",
+    "05_pretraining.pdf",
+    "06_mechanics.pdf",
+    "07_probes.pdf",
+    "08_zero.pdf",
+    "09_resources.pdf",
+    "10_frozen_control.pdf",
+    "11_initial.pdf"
+  ]
+}
