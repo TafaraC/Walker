@@ -1,0 +1,1271 @@
+{
+  "sources": {
+    "parent": {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/comparison.json",
+      "sha256": "e6077bbff3716a8befce17be9fa7106916009c63b0a507154ed9e2cf07090b8e"
+    },
+    "scratch": {
+      "path": "experiments/consolidated/v1/scratch_v1/evaluation/all_all_correct/comparison.json",
+      "sha256": "788a1fb23f05052c7920aed82591bc5422a451d050cdfa53b0e584549d1e04e7"
+    },
+    "controls": {
+      "path": "experiments/submission_controls/v1/evaluation/summary/comparison.json",
+      "sha256": "fd8ec6267abd4ef533520812f39232f475cc44c063950d013cd970486121023b"
+    },
+    "probes": {
+      "path": "experiments/consolidated/v1/scratch_v1/probing/report.json",
+      "sha256": "0aeeb19e93e5a89816b8404f1c8952d33fb90b8e1360fd71a8728ade7f928066"
+    },
+    "curves": {
+      "path": "experiments/submission_controls/v1/curves/curves.json",
+      "sha256": "cfa011bdd8113685f17047d12668d5b84fbfea657e3a7acb979315deb2bda286"
+    }
+  },
+  "trace_sources": [
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/original_101/oracle/trace.npz",
+      "sha256": "c47233d1eca77c012832cfaaab2fb9bb55a32d3d5bd00ac1343178af29e27335"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/original_202/oracle/trace.npz",
+      "sha256": "b5cf8819afcf8c2fce581efeeeff955b189002049396d03ecef0c320c80daf4e"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/original_303/oracle/trace.npz",
+      "sha256": "dec233714d4996e919ccc1183474d2117fcaca8705cb5124235bed132c9dee14"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/original_404/oracle/trace.npz",
+      "sha256": "4a58941bca982d4601a28f49d078e37f94eac1c415cf5761e02fd965c3b5debf"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/original_505/oracle/trace.npz",
+      "sha256": "d2299d2b4bf664db439d239e6b6a26cfa5348d37d315b6308b557c807b1217f6"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/grouped_group_0_draw_0/oracle/trace.npz",
+      "sha256": "d7104a271642f3ccdbabc9e386d5ce3e8e43526af3163f4d62d13f26ef3130b8"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/grouped_group_0_draw_1/oracle/trace.npz",
+      "sha256": "c6cffbba36a1f547d2a8034ed88a57124c35aab14320aa5e2b75d3da257c7be6"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/grouped_group_0_draw_2/oracle/trace.npz",
+      "sha256": "3bb7533ecb1f1f077fd326bf32a745c3285bc5837deb4ac1ac1871dc6e27a64c"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/grouped_group_1_draw_0/oracle/trace.npz",
+      "sha256": "f6e660538e0e15817be72f4908a1bb2f4c7aaec055085bd74c43f5aa909332b3"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/grouped_group_1_draw_1/oracle/trace.npz",
+      "sha256": "e3be7ed53dad0483f4fff9334f88687d0f1ee8d7de55f193593cc548b1fdbbcc"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/grouped_group_1_draw_2/oracle/trace.npz",
+      "sha256": "33e66b29952cd75719e7277c317f232ae67e79fd238967df5cd2532a7c2a3886"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/grouped_group_2_draw_0/oracle/trace.npz",
+      "sha256": "042ce0c6f972e834417033d502af2c6736b814192adf7dff17f2b790e8c24f73"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/grouped_group_2_draw_1/oracle/trace.npz",
+      "sha256": "5979b9ebd1eacf90ce6b55128c3905609870bc155d1909727dd68aae66b265cc"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/grouped_group_2_draw_2/oracle/trace.npz",
+      "sha256": "aeb819cc1afce202351513cd7247268f515cc39712ab52154b35841158a112be"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/grouped_group_3_draw_0/oracle/trace.npz",
+      "sha256": "7ca09fede748c2584b1a35962b5989996c2d091c85a2512638d3ee4db95fd062"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/grouped_group_3_draw_1/oracle/trace.npz",
+      "sha256": "6e5670c4f430c984f9a60cd6318b27c934725ae06302986bb2b846ce6b75a25c"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/grouped_group_3_draw_2/oracle/trace.npz",
+      "sha256": "59852d5b2d269f86843ef7ed7a345321bfef336fe031f05a5cfad8e6aaa096af"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/grouped_group_4_draw_0/oracle/trace.npz",
+      "sha256": "59bbc5a96420ed6307484fbd2dab850f008eec45fdb063ea772fa57401b31573"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/grouped_group_4_draw_1/oracle/trace.npz",
+      "sha256": "56a54c0e30547dded73190b4af3dfc5fba86a8651110d3023d4d9793f9a0b925"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/grouped_group_4_draw_2/oracle/trace.npz",
+      "sha256": "0266024d72f120f3b90f811f10497c7fdb2c9d5a2681648cc39d89ec51093cd5"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/confirmation_group_0_draw_0/oracle/trace.npz",
+      "sha256": "b7ec89475d27e146983ad93b556a83331955fd0f8545287adfc5e19a27acd7f7"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/confirmation_group_0_draw_1/oracle/trace.npz",
+      "sha256": "3d4f75adc7744c9c89e568034bac8d058684b3c329348bc1d02faf3401fde06b"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/confirmation_group_0_draw_2/oracle/trace.npz",
+      "sha256": "101c91d8b4f82530f6b84c194c0e444b2993f4466d2dfb356ac4719c0431854b"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/confirmation_group_1_draw_0/oracle/trace.npz",
+      "sha256": "5479f6d2db6446066c9cfa02a0366dc89a9b2ec276fc1c11c4503403143dfbaa"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/confirmation_group_1_draw_1/oracle/trace.npz",
+      "sha256": "5ba3ed6db999a7b587bdd4072c91afec6e06f1a784250ebd15a56bc4a6f2922e"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/confirmation_group_1_draw_2/oracle/trace.npz",
+      "sha256": "9a0bbf1ed8bc42ffe2d22da299338f7d90ac8b2700227f1905e8a59a165d99ee"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/confirmation_group_2_draw_0/oracle/trace.npz",
+      "sha256": "0e672ba6c577c5142cb933d06b6e774ea347662d51cea3be35a93e802654cf7c"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/confirmation_group_2_draw_1/oracle/trace.npz",
+      "sha256": "9fb636106c6c6835b6bbe4096157d0b2a52c5a130f8103edf6624f9790b55983"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/confirmation_group_2_draw_2/oracle/trace.npz",
+      "sha256": "6e68ec2bce5e9b5bca47437c61471f3e61a024ce4a3a3aacca67bdc5fe152431"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/confirmation_group_3_draw_0/oracle/trace.npz",
+      "sha256": "9a2ceceeb03c327157641ba5202a34797338ce77ca44129faba8624bd4691f18"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/confirmation_group_3_draw_1/oracle/trace.npz",
+      "sha256": "8cd6eacd236c288749a402ce8c6fdd8ec342736b0770ee1515883ff874d85234"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/confirmation_group_3_draw_2/oracle/trace.npz",
+      "sha256": "d24cb3ab670e2851b92f8c71d6355de3002061800e4eb19221e3c438397b7c82"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/confirmation_group_4_draw_0/oracle/trace.npz",
+      "sha256": "0947e3b197af48f39aa2638c60d8ff4bc4f095353948b0aadb5a7649fb5d6fd6"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/confirmation_group_4_draw_1/oracle/trace.npz",
+      "sha256": "01dd70f4ad5c52f5087630d17721ecfa83049a1f070695da703f684b645ca4b9"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/confirmation_group_4_draw_2/oracle/trace.npz",
+      "sha256": "0b5c5b71c472b6a8c4fe72c0a7903384f3102a23fffd149dd7bee3ce1aec9751"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/nominal_0/oracle/trace.npz",
+      "sha256": "5b2271c3aab34047eab86b5796d3d8c2413e75284432eaaeb3c4fd2b09bcca75"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/nominal_1/oracle/trace.npz",
+      "sha256": "e8e79af430fe7c72b61e736234fbe8bf7ddc398af1e4183398656d81665af478"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/nominal_2/oracle/trace.npz",
+      "sha256": "d263c76f191a90f3dd464633d8871d0728691930141a18dd1d642e2f2fa7e52a"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/original_101/original_hidden_42_bc/trace.npz",
+      "sha256": "6fde24e5fd6def776212fd8d5fd814b091c9a7d7dbdb3bde2407b0cd478f0e4a"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/original_202/original_hidden_42_bc/trace.npz",
+      "sha256": "bd7fb82febf1df0607d572d98812cc03f08d25e68106194588890794555d731e"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/original_303/original_hidden_42_bc/trace.npz",
+      "sha256": "3ceae25e4679e07ffe357aba6b8d8c31ba57e6952cc6646f4e117527a71f857f"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/original_404/original_hidden_42_bc/trace.npz",
+      "sha256": "97e11ab9207575c43972534ef516d1d8d10bda9812443d5ac06f9cafd6c481a7"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/original_505/original_hidden_42_bc/trace.npz",
+      "sha256": "d4b1725e33d04ade081598c9b1d88c92d83987533f3461dc4c55e7d17dd18c38"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/grouped_group_0_draw_0/original_hidden_42_bc/trace.npz",
+      "sha256": "eee85920ba77ca2d0dd28d65ae765f004b7ca944ad9d0ae6696e9357066deea0"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/grouped_group_0_draw_1/original_hidden_42_bc/trace.npz",
+      "sha256": "d937734c81e26110b845919765782926f9f812cc826d66b4b694e4b3b88d2f0a"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/grouped_group_0_draw_2/original_hidden_42_bc/trace.npz",
+      "sha256": "dac0225f7001594846f8899f5bf94e458ca5ec48da578453c558c0b283a5846a"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/grouped_group_1_draw_0/original_hidden_42_bc/trace.npz",
+      "sha256": "2d42e5a0619045aff83c6ddcba09d8f7137b493f4026333f8c48503b5b57a779"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/grouped_group_1_draw_1/original_hidden_42_bc/trace.npz",
+      "sha256": "a99d02648a41c7d27690250e56c01cada3559ec92f09f328a28ef3d171b32d25"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/grouped_group_1_draw_2/original_hidden_42_bc/trace.npz",
+      "sha256": "38d6f9b95b674ac049bf90064ae27c93ab473b32f4e610ff4b3d30186a1c192f"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/grouped_group_2_draw_0/original_hidden_42_bc/trace.npz",
+      "sha256": "61df08b1b3ee884a382ee57093a45d22a1b785fe426004a514b181f68c858f10"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/grouped_group_2_draw_1/original_hidden_42_bc/trace.npz",
+      "sha256": "c56476d0a2ae57a34c64d0981f3c2bf57c9285fb4d28a7bf319ad5130ccac90d"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/grouped_group_2_draw_2/original_hidden_42_bc/trace.npz",
+      "sha256": "599e967a19899bb3c9e32ba1b3c00a84e89682a59b180a0a33d5a00e758ffe91"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/grouped_group_3_draw_0/original_hidden_42_bc/trace.npz",
+      "sha256": "7414ed0287a8f712a2b7afc1127da573c0bd8916ea7c892cf2992a2145c3dee6"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/grouped_group_3_draw_1/original_hidden_42_bc/trace.npz",
+      "sha256": "0183222f1b14e05d2fa653f523db745aaff16b32470ff40f735ea92d564e8654"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/grouped_group_3_draw_2/original_hidden_42_bc/trace.npz",
+      "sha256": "4a693f0fec232205dd9342aff4a8c50160a49f8fa846133cba53003b4d9f6e2b"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/grouped_group_4_draw_0/original_hidden_42_bc/trace.npz",
+      "sha256": "2f1235b07a1fcc3e81f7634fa4d9e84b611dc9b18f96d59ce46ac058fcf3ff4b"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/grouped_group_4_draw_1/original_hidden_42_bc/trace.npz",
+      "sha256": "f20407008f00522e238aff53e9a0ac544f497135318f2c6ee70af5bf146553d5"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/grouped_group_4_draw_2/original_hidden_42_bc/trace.npz",
+      "sha256": "0b6ba5af7ffd2c6b072374bc9cd0380ec87af5d9a3f8ec6bb37d9614ca80c174"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/confirmation_group_0_draw_0/original_hidden_42_bc/trace.npz",
+      "sha256": "f617d7c693755fff06938f5d89a96ea49a9ebdde7999447312b3ba98ac025085"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/confirmation_group_0_draw_1/original_hidden_42_bc/trace.npz",
+      "sha256": "bc8cd2457188ef049df38c9cee7ab729ff001342da9dd15fd3e45770de1fd868"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/confirmation_group_0_draw_2/original_hidden_42_bc/trace.npz",
+      "sha256": "8a72634648aba3687fdc3f54eac6750ccdb64cc544f198faa979a445915477ac"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/confirmation_group_1_draw_0/original_hidden_42_bc/trace.npz",
+      "sha256": "08cb29fe0e136c87907c34c30ecbc2705ef3a9e9e22e2db3d4303d36cbdc44c3"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/confirmation_group_1_draw_1/original_hidden_42_bc/trace.npz",
+      "sha256": "75c4a355ccd1f0d921465bfec04e00e408c41ee2755badef885f0428dc492dbf"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/confirmation_group_1_draw_2/original_hidden_42_bc/trace.npz",
+      "sha256": "7db383aee07800b1485eaeaaeb7074eaf48c48c6f4dfff9911394b45e35799b7"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/confirmation_group_2_draw_0/original_hidden_42_bc/trace.npz",
+      "sha256": "f8894f8fc6bea1a733a6d64da4b2a89b7747277692986976176d1782955c6882"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/confirmation_group_2_draw_1/original_hidden_42_bc/trace.npz",
+      "sha256": "60050c896d21d68d033954148a101e8c29aab70060138ed1ceae6896aa8eec99"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/confirmation_group_2_draw_2/original_hidden_42_bc/trace.npz",
+      "sha256": "662037e422bd0dcca99bd12d387e7328196dc020f7f2ea3d975500c5ca65d819"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/confirmation_group_3_draw_0/original_hidden_42_bc/trace.npz",
+      "sha256": "afd43f028ed2d13c775405cffee379ca8877e568631b8740589669080f7193fa"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/confirmation_group_3_draw_1/original_hidden_42_bc/trace.npz",
+      "sha256": "9364a9bbb6cea027395aed16ba5accf72480c1b0589a7f970e0b1895b4eea718"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/confirmation_group_3_draw_2/original_hidden_42_bc/trace.npz",
+      "sha256": "ea8bc028f79c993783d639e455f62a13563d46bff4760e75e42d2373a8f73bb0"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/confirmation_group_4_draw_0/original_hidden_42_bc/trace.npz",
+      "sha256": "5d19030b9ecdc662da8dee01960774c215cda61b3d91bc38ddd0ead0dd260420"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/confirmation_group_4_draw_1/original_hidden_42_bc/trace.npz",
+      "sha256": "08e870c6fe24ba8afd0b46965ebb85af74c39058405636184239882f9475491a"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/confirmation_group_4_draw_2/original_hidden_42_bc/trace.npz",
+      "sha256": "254e0c4897ba6bc9f531d0a37745694ca7d9d5e7bf7db4bf5b6129763f4ce594"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/nominal_0/original_hidden_42_bc/trace.npz",
+      "sha256": "a53be6c6e0a613f07baf728d85dcd0d5ff555418a31e41089a3176b4886408bc"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/nominal_1/original_hidden_42_bc/trace.npz",
+      "sha256": "d50a23562d4845eeff6841f05e2ff3a89ac5035873d62fcaac3cca3556693236"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/nominal_2/original_hidden_42_bc/trace.npz",
+      "sha256": "424aeaa1edeb10615e91773440b67f688cb4f84493bb65ccd106013a6ac72141"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/original_101/original_hidden_42_dagger_mixed/trace.npz",
+      "sha256": "60ebd826669b39e5ea6f473c21ff0a8469ada0d12ad14395752929d4acd1cedc"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/original_202/original_hidden_42_dagger_mixed/trace.npz",
+      "sha256": "d7ce7af65f8eb3ce46fa1bf9f97c928e83c3f48180913ffac01f10c0714b5cd4"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/original_303/original_hidden_42_dagger_mixed/trace.npz",
+      "sha256": "d82a073d50f8f3cc3b13da19bc3c4ab4836e82dd33c3ed967d3f0c103829bbc2"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/original_404/original_hidden_42_dagger_mixed/trace.npz",
+      "sha256": "5880d29310725f7cc323a5353ee5c6cd82625749bda834badc0b13eca2deb620"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/original_505/original_hidden_42_dagger_mixed/trace.npz",
+      "sha256": "5a59c698fac82c0756b685673e1bfcbf381983b3b20092f56d71c5d2778838f5"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/grouped_group_0_draw_0/original_hidden_42_dagger_mixed/trace.npz",
+      "sha256": "893a73d705752e3b3e40a475b246870f4f077d51501e524e4d51673e8def4675"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/grouped_group_0_draw_1/original_hidden_42_dagger_mixed/trace.npz",
+      "sha256": "842ea937613cab6721f561933a7e849f9eee30d4ab7f0e4404f220014aff7c62"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/grouped_group_0_draw_2/original_hidden_42_dagger_mixed/trace.npz",
+      "sha256": "e080ede206eb336255a48f284c87bd20d5a0bcdadc9fa7813f60bf71619b01ea"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/grouped_group_1_draw_0/original_hidden_42_dagger_mixed/trace.npz",
+      "sha256": "8f5125205ff6143f86fa5f3af235ebbbdaca8615583bbf8f1841f1b2b0f96c42"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/grouped_group_1_draw_1/original_hidden_42_dagger_mixed/trace.npz",
+      "sha256": "3043cc56a5c7298345cbed6c91aa0dabe101326ba454314b1705414de9d28208"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/grouped_group_1_draw_2/original_hidden_42_dagger_mixed/trace.npz",
+      "sha256": "63690e1228a92bdcd962e4c8c3b375d5f471c906252ed233e4e717a152b56fba"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/grouped_group_2_draw_0/original_hidden_42_dagger_mixed/trace.npz",
+      "sha256": "53c0c2805e968157bf6572e921e360aed6baa1dcf3d482ef3b4c524d254cd0f1"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/grouped_group_2_draw_1/original_hidden_42_dagger_mixed/trace.npz",
+      "sha256": "0051c65912b753f9518c82076418a6ae041318b9019441c8dc681353265f4623"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/grouped_group_2_draw_2/original_hidden_42_dagger_mixed/trace.npz",
+      "sha256": "6e98fe410fd8e337318e482b9e28005f1460b5b09d3ccdb4ba1b7ab08e56cb3d"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/grouped_group_3_draw_0/original_hidden_42_dagger_mixed/trace.npz",
+      "sha256": "eefb1118064c0ff485c22ab8ce2011ba8cd360526bb236a1091a1b871b5e2a46"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/grouped_group_3_draw_1/original_hidden_42_dagger_mixed/trace.npz",
+      "sha256": "c99487ea1ca600117082f26e8f14a52b06ceb5c994c24e44d0d7a44d599cb851"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/grouped_group_3_draw_2/original_hidden_42_dagger_mixed/trace.npz",
+      "sha256": "ef6cb613987f58e47bd1eae8ac47d123ec34ea2c0b03731b3dee5808919389ee"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/grouped_group_4_draw_0/original_hidden_42_dagger_mixed/trace.npz",
+      "sha256": "3d2d009506bd16d603ed2d7a23e434642611598a44ef7e7310d21f1bdce442a3"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/grouped_group_4_draw_1/original_hidden_42_dagger_mixed/trace.npz",
+      "sha256": "1e5ededc6eeb7451464fab2a5f49407968cbacd9609e1c5ae241134d99c9d59c"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/grouped_group_4_draw_2/original_hidden_42_dagger_mixed/trace.npz",
+      "sha256": "86da5dc02c9c0594a7f85c007227511d5c58876bfe2259ce4e2882f8079b4e98"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/confirmation_group_0_draw_0/original_hidden_42_dagger_mixed/trace.npz",
+      "sha256": "e4a1e3731cbee79e67b5caffd7b7ca76cb8d6b92c271e9a279ae18eef00bdfa1"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/confirmation_group_0_draw_1/original_hidden_42_dagger_mixed/trace.npz",
+      "sha256": "ceb61652a359da62c6b6ec08c209c50b55fb569cb12170b3dffb348bc4d8177b"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/confirmation_group_0_draw_2/original_hidden_42_dagger_mixed/trace.npz",
+      "sha256": "b052cab55f3a4760c85dca740845c2f5a6ee1c725853b17c4b2e1f5bef6da4bd"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/confirmation_group_1_draw_0/original_hidden_42_dagger_mixed/trace.npz",
+      "sha256": "e86bf72e60dfed9e6294156375db9192ed5ccddee27c48d9b9a52d7dadc830b1"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/confirmation_group_1_draw_1/original_hidden_42_dagger_mixed/trace.npz",
+      "sha256": "525bf75a0de3a9cff1184ede33f1eff1f26a14725782aa95028cf537511164f0"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/confirmation_group_1_draw_2/original_hidden_42_dagger_mixed/trace.npz",
+      "sha256": "98583c572c2fd5e21bf4c2697e942e1d0a165eb930bcda61e5982ada18a0be47"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/confirmation_group_2_draw_0/original_hidden_42_dagger_mixed/trace.npz",
+      "sha256": "7713b9509698b085886148bbd1edb0501d1be6def2ee471b3941f1c8673273a5"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/confirmation_group_2_draw_1/original_hidden_42_dagger_mixed/trace.npz",
+      "sha256": "5ab5606c784991083089464a80e0190760373a90d7f6541f7abdb1e7e288854b"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/confirmation_group_2_draw_2/original_hidden_42_dagger_mixed/trace.npz",
+      "sha256": "2135cb1acb65392f5913292f587830ea349290e5b8b894fc9961a332e7fd74b3"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/confirmation_group_3_draw_0/original_hidden_42_dagger_mixed/trace.npz",
+      "sha256": "dd5a2666ee890a55b168ad845fdebb063e8eb9dc1444fa874451e3856d338b57"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/confirmation_group_3_draw_1/original_hidden_42_dagger_mixed/trace.npz",
+      "sha256": "0372185d9e2eba6b923b8247481b2ab1a76ae0b1bbccb16308f7777798c03215"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/confirmation_group_3_draw_2/original_hidden_42_dagger_mixed/trace.npz",
+      "sha256": "7d9b14aafd3c2a20c789e299db8268af6b507172334e0760c07dbdca59a028eb"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/confirmation_group_4_draw_0/original_hidden_42_dagger_mixed/trace.npz",
+      "sha256": "a9be6d7e76420aca6e2ba523bd9f5b73c58c508d593972e52befa8847ee60a4a"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/confirmation_group_4_draw_1/original_hidden_42_dagger_mixed/trace.npz",
+      "sha256": "13de0efe1556155becfc71d57a0f6a208d09f72f7c9c8364ce3cefb2a3faa871"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/confirmation_group_4_draw_2/original_hidden_42_dagger_mixed/trace.npz",
+      "sha256": "606a2edc101e8cb98c22824fc18f78bf4b209e33488634086b85a3cf3fbfd868"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/nominal_0/original_hidden_42_dagger_mixed/trace.npz",
+      "sha256": "6328ad0ad34cb9503a728d006fc96fb1db4b1f0a109535788da99307317cdcde"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/nominal_1/original_hidden_42_dagger_mixed/trace.npz",
+      "sha256": "0546c78aef57717472f6a4957f521e0d82e7df1a0b40366b5f48b874c8be6aeb"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/nominal_2/original_hidden_42_dagger_mixed/trace.npz",
+      "sha256": "7ff1e15984a1d40616a412f4f029014b950adbbd0946396ac2da0526c67a43ab"
+    },
+    {
+      "path": "experiments/submission_controls/v1/evaluation/runs/original_101/bc_original_matched/trace.npz",
+      "sha256": "8de9781583bb6ef25062d29c836c65fc5d8d01a9eea129f30e709ef88408b740"
+    },
+    {
+      "path": "experiments/submission_controls/v1/evaluation/runs/original_202/bc_original_matched/trace.npz",
+      "sha256": "09a36d0dd0259d31d8116919ba695f95637cd80077c424edff47821a87b89dc5"
+    },
+    {
+      "path": "experiments/submission_controls/v1/evaluation/runs/original_303/bc_original_matched/trace.npz",
+      "sha256": "aaed9bb1fce045548d34bbb48a18c3be3fe2f65d493726ca85e3e0e29ffa50b1"
+    },
+    {
+      "path": "experiments/submission_controls/v1/evaluation/runs/original_404/bc_original_matched/trace.npz",
+      "sha256": "3c6b041d5ae1bcbd8bf1b7d2853ea5ed667504fdfffabd488361feea44f21619"
+    },
+    {
+      "path": "experiments/submission_controls/v1/evaluation/runs/original_505/bc_original_matched/trace.npz",
+      "sha256": "3a2f50e9a3e495ee42fa12b02ea92cfa8f7c4ae29c04d401283df784adc88ba2"
+    },
+    {
+      "path": "experiments/submission_controls/v1/evaluation/runs/grouped_group_0_draw_0/bc_original_matched/trace.npz",
+      "sha256": "6f38385565b92112b868bf0084393aaefda0ede62ca224a676ed5f2855002301"
+    },
+    {
+      "path": "experiments/submission_controls/v1/evaluation/runs/grouped_group_0_draw_1/bc_original_matched/trace.npz",
+      "sha256": "634233435c48fc42bd1d4a2865b461d28b8a73ef6d9304384e3fc879e2ce7231"
+    },
+    {
+      "path": "experiments/submission_controls/v1/evaluation/runs/grouped_group_0_draw_2/bc_original_matched/trace.npz",
+      "sha256": "50c238d3b1c1b8d0ee92c038f2eaef880c7c5238ff078fd5be7299c78dd09e3b"
+    },
+    {
+      "path": "experiments/submission_controls/v1/evaluation/runs/grouped_group_1_draw_0/bc_original_matched/trace.npz",
+      "sha256": "57521dc6ee1be123b7e1eceedfe5ce270db3dc7474a993bf9106fd82edae5a78"
+    },
+    {
+      "path": "experiments/submission_controls/v1/evaluation/runs/grouped_group_1_draw_1/bc_original_matched/trace.npz",
+      "sha256": "4d565039cb4f4e5f69052cbd0bdea6975264a9bc92a42afe58c56c8e5dacbaab"
+    },
+    {
+      "path": "experiments/submission_controls/v1/evaluation/runs/grouped_group_1_draw_2/bc_original_matched/trace.npz",
+      "sha256": "f4f118604e9d72c851680f68267a975983d2b4f4bcf9120de2e575abf6452b29"
+    },
+    {
+      "path": "experiments/submission_controls/v1/evaluation/runs/grouped_group_2_draw_0/bc_original_matched/trace.npz",
+      "sha256": "e7cd46192cc38b59e613bdb6c294a5d366aa8a3e6238178bec95197d944fe8d0"
+    },
+    {
+      "path": "experiments/submission_controls/v1/evaluation/runs/grouped_group_2_draw_1/bc_original_matched/trace.npz",
+      "sha256": "1ffac81331f08ab46c9ec8d24d0deea03cdf0fcef4174f517507ef3eb88e8747"
+    },
+    {
+      "path": "experiments/submission_controls/v1/evaluation/runs/grouped_group_2_draw_2/bc_original_matched/trace.npz",
+      "sha256": "7475d2f0a0872f6a636ed3ca0dd73c64cd200b5e53e42bc376810e72a1f62bfd"
+    },
+    {
+      "path": "experiments/submission_controls/v1/evaluation/runs/grouped_group_3_draw_0/bc_original_matched/trace.npz",
+      "sha256": "bb38d1dce810f8add15aff251ebcde7e751ab0c763abdd585f7961a28b7e6e48"
+    },
+    {
+      "path": "experiments/submission_controls/v1/evaluation/runs/grouped_group_3_draw_1/bc_original_matched/trace.npz",
+      "sha256": "cf580e6ea1bf96cf6d64ed04e17fe41749bd9f865db417731227d5d00c9babd1"
+    },
+    {
+      "path": "experiments/submission_controls/v1/evaluation/runs/grouped_group_3_draw_2/bc_original_matched/trace.npz",
+      "sha256": "1d431c4aecff54c5a54f45ff56563ecc46a09f55f88caef14cbb670a4adcde1e"
+    },
+    {
+      "path": "experiments/submission_controls/v1/evaluation/runs/grouped_group_4_draw_0/bc_original_matched/trace.npz",
+      "sha256": "336edc30852afa0e4ecc65d946d8b5d110fba16514bd314ab2ccc5a754064437"
+    },
+    {
+      "path": "experiments/submission_controls/v1/evaluation/runs/grouped_group_4_draw_1/bc_original_matched/trace.npz",
+      "sha256": "a96fcffff066b217a5b66b4b955f232f28fd84a937ac5b37a9170344137f3070"
+    },
+    {
+      "path": "experiments/submission_controls/v1/evaluation/runs/grouped_group_4_draw_2/bc_original_matched/trace.npz",
+      "sha256": "44ba60baa963c9d9c2ac6600212d4055da5d22787d94615c266e93e6477480a5"
+    },
+    {
+      "path": "experiments/submission_controls/v1/evaluation/runs/confirmation_group_0_draw_0/bc_original_matched/trace.npz",
+      "sha256": "3bc1ce8e61b353012ee98376cccf109173dfc970911305eca0eb4fc38f6a30cb"
+    },
+    {
+      "path": "experiments/submission_controls/v1/evaluation/runs/confirmation_group_0_draw_1/bc_original_matched/trace.npz",
+      "sha256": "2c6ada879c58ebe6998c248f069014e6fc08bdf309b075b4d9869a6e82290c9c"
+    },
+    {
+      "path": "experiments/submission_controls/v1/evaluation/runs/confirmation_group_0_draw_2/bc_original_matched/trace.npz",
+      "sha256": "f13b92dcc5a21a53232c043893c308dc8da14630e7e266a94f80c9b9b2d8e0ea"
+    },
+    {
+      "path": "experiments/submission_controls/v1/evaluation/runs/confirmation_group_1_draw_0/bc_original_matched/trace.npz",
+      "sha256": "631773e11495c37076b13cee0f47e42609ebcb6a3fc56e995466523090d52030"
+    },
+    {
+      "path": "experiments/submission_controls/v1/evaluation/runs/confirmation_group_1_draw_1/bc_original_matched/trace.npz",
+      "sha256": "d2635149455f4825b500e64c3a6fb6f2bb5b551a872fb3b2746d0b6033f90bb0"
+    },
+    {
+      "path": "experiments/submission_controls/v1/evaluation/runs/confirmation_group_1_draw_2/bc_original_matched/trace.npz",
+      "sha256": "962764657cd60689d26fab507ba29aaf8299b39e68339043b47fdfe88b995f1c"
+    },
+    {
+      "path": "experiments/submission_controls/v1/evaluation/runs/confirmation_group_2_draw_0/bc_original_matched/trace.npz",
+      "sha256": "aba3b181cf5f96897d1e76db20cf3a6cc6f76ebf1d5953651708c17bbbbcaa8e"
+    },
+    {
+      "path": "experiments/submission_controls/v1/evaluation/runs/confirmation_group_2_draw_1/bc_original_matched/trace.npz",
+      "sha256": "88c74e689aa3cd04ca7d06e4c4bee9168160a49cf1488f220e8cd989efcd93ee"
+    },
+    {
+      "path": "experiments/submission_controls/v1/evaluation/runs/confirmation_group_2_draw_2/bc_original_matched/trace.npz",
+      "sha256": "db6874f9bd0953d5c2919fe9744f72e55dbfe6799dba27e44ee2e11457a5a45b"
+    },
+    {
+      "path": "experiments/submission_controls/v1/evaluation/runs/confirmation_group_3_draw_0/bc_original_matched/trace.npz",
+      "sha256": "14b766b58d8938b062054e04d8dd008d8e74a9defe0454766f36628cad73df8e"
+    },
+    {
+      "path": "experiments/submission_controls/v1/evaluation/runs/confirmation_group_3_draw_1/bc_original_matched/trace.npz",
+      "sha256": "58a6095873b262f13bab0bd23031f07cf1aac6107e2ad0d39cfb47465ac2f171"
+    },
+    {
+      "path": "experiments/submission_controls/v1/evaluation/runs/confirmation_group_3_draw_2/bc_original_matched/trace.npz",
+      "sha256": "7dba5bfd4d80a6b3e327b165cd6d74ec30a4e26142784099f2c6aa4736ed9a41"
+    },
+    {
+      "path": "experiments/submission_controls/v1/evaluation/runs/confirmation_group_4_draw_0/bc_original_matched/trace.npz",
+      "sha256": "bfaf91f9e193b1bdc0cc13d55af65f2260b2a6f9032cf1a22ec4179abfc88b35"
+    },
+    {
+      "path": "experiments/submission_controls/v1/evaluation/runs/confirmation_group_4_draw_1/bc_original_matched/trace.npz",
+      "sha256": "afc86349e69270894575d004e07fee2b11ae206777cbe649aead37cdd71f35a9"
+    },
+    {
+      "path": "experiments/submission_controls/v1/evaluation/runs/confirmation_group_4_draw_2/bc_original_matched/trace.npz",
+      "sha256": "397c20ec5d775d649ca7acfb0e36dcf7740e672b20c200bdb79535704f9f8c62"
+    },
+    {
+      "path": "experiments/submission_controls/v1/evaluation/runs/nominal_0/bc_original_matched/trace.npz",
+      "sha256": "8338b2b181efb49fdba740a57ccbcfd440687e0bb61971503628b7d0496f0c42"
+    },
+    {
+      "path": "experiments/submission_controls/v1/evaluation/runs/nominal_1/bc_original_matched/trace.npz",
+      "sha256": "ad29f86483ebddaa7f00c48ba26b405ade2b4627e31b7e606c034bca4f250d64"
+    },
+    {
+      "path": "experiments/submission_controls/v1/evaluation/runs/nominal_2/bc_original_matched/trace.npz",
+      "sha256": "7784fca42cc5d73e8397fbf0438642b8ebf3f35f63d5d53726d9da9809ef0719"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/grouped_group_0_draw_0/varied_hidden_42_bc/trace.npz",
+      "sha256": "2314f642f1a732ec4923b3817b3a87f5b8dcfeb33ef2e9bad282925a66cdb0f9"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/grouped_group_0_draw_1/varied_hidden_42_bc/trace.npz",
+      "sha256": "c0d6b487ba8e2763bc0fa853c179b3abf1b1d4fcb68005081b224515f2625aef"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/grouped_group_0_draw_2/varied_hidden_42_bc/trace.npz",
+      "sha256": "0e55c6daaad1bd1ab2ffabe120e8ea6fe2a907d713cca9efb37b2dc36e94ca15"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/grouped_group_1_draw_0/varied_hidden_42_bc/trace.npz",
+      "sha256": "b1c1617e0ea342d256e190f530ca233f488f1c49cff4763a01ac0a8e38a8d1c4"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/grouped_group_1_draw_1/varied_hidden_42_bc/trace.npz",
+      "sha256": "b6aeb7e0b388ecdd301d8da41695abf796e062bc26fd3e104a103937f0918ee4"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/grouped_group_1_draw_2/varied_hidden_42_bc/trace.npz",
+      "sha256": "c04352a13ecceb09d4eb2ea04808af322558d8cfe6fee56c6fa8ac964894512e"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/grouped_group_2_draw_0/varied_hidden_42_bc/trace.npz",
+      "sha256": "8bcff424b0609b7778b50abf53d1fc0af7d9f3b8c919a1e7da1bb10f98ea4cca"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/grouped_group_2_draw_1/varied_hidden_42_bc/trace.npz",
+      "sha256": "aee73e5ac743aca783e43693ca1ec89f8cc05fea8c92229d1f9daccf8c84e623"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/grouped_group_2_draw_2/varied_hidden_42_bc/trace.npz",
+      "sha256": "d57a9f3ff339eb67f88fe648a11fdc371b17d7f104ff820cc540d7eab8d50891"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/grouped_group_3_draw_0/varied_hidden_42_bc/trace.npz",
+      "sha256": "c85ed5e6fb27808e06164c8aaf3bc346b458ce0940f1779a668f47166eb79af7"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/grouped_group_3_draw_1/varied_hidden_42_bc/trace.npz",
+      "sha256": "1939a16ebd2854d7572718fe0f1a5fbc9829228c50fa91a9e454ae022ae73cf2"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/grouped_group_3_draw_2/varied_hidden_42_bc/trace.npz",
+      "sha256": "bfce6601174b3fbad817c00faaa9c5a3ab6353ff8c210da6c8708f2cdbc3caa0"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/grouped_group_4_draw_0/varied_hidden_42_bc/trace.npz",
+      "sha256": "c161a90cbfaecb4850b9a9f42cbdd01ea521fd626cb5cbfd28a0c7bc1dbef5ca"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/grouped_group_4_draw_1/varied_hidden_42_bc/trace.npz",
+      "sha256": "127efab1bbdb92d2bae11cae1f3a96edc962feb9539571ebaa8f251af623d086"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/grouped_group_4_draw_2/varied_hidden_42_bc/trace.npz",
+      "sha256": "1a18c182833fe7b0f43227a23c2cc71010633c9b8e10e3289cf0f01f1f3b7fb8"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/confirmation_group_0_draw_0/varied_hidden_42_bc/trace.npz",
+      "sha256": "d92bbabc8fad616208762321ba10378c7d21907525eb253d1bf2b8c370edd1c8"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/confirmation_group_0_draw_1/varied_hidden_42_bc/trace.npz",
+      "sha256": "a37fcf2f340b37e67247dedc03dc17e9ac2b3066a0a97f62e23a7d93f8cd3664"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/confirmation_group_0_draw_2/varied_hidden_42_bc/trace.npz",
+      "sha256": "f88ac4a91dad0db751746ab05ca6201ed6720d75619dc50c4abb8e9403043a0e"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/confirmation_group_1_draw_0/varied_hidden_42_bc/trace.npz",
+      "sha256": "d36e5d742b6cbf58eec3d39cf2717f9ccb9cea0bc7d19282fa1f0c2ff2cddc86"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/confirmation_group_1_draw_1/varied_hidden_42_bc/trace.npz",
+      "sha256": "8a66422a915931678efb942b22ce455dd2573de555e950f85a4615b080fda441"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/confirmation_group_1_draw_2/varied_hidden_42_bc/trace.npz",
+      "sha256": "b4387d3044f41251536623a335d4e672458b45ab8278cf1dc5b5fb8cf2ff3a06"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/confirmation_group_2_draw_0/varied_hidden_42_bc/trace.npz",
+      "sha256": "9a0e5d105b83e54533380761b37099fc16de2845366fdcc6d544357fba8f4c76"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/confirmation_group_2_draw_1/varied_hidden_42_bc/trace.npz",
+      "sha256": "512ef12209acc9ba16441a96669ad1f3686ee5d17b5ed2c5d2f4661cddadbbfe"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/confirmation_group_2_draw_2/varied_hidden_42_bc/trace.npz",
+      "sha256": "b017072939a260cd1b5758a89f790dd164de9d1904b8de6f35f54b148b3d07b2"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/confirmation_group_3_draw_0/varied_hidden_42_bc/trace.npz",
+      "sha256": "d44ec9a27e9ff23b7e086e88fe280953341c766246d527093e23d3f86237b3b7"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/confirmation_group_3_draw_1/varied_hidden_42_bc/trace.npz",
+      "sha256": "22e174d5c69797d90674494ee77bbbacdb64b963e748b9a4de7c645358e4c43a"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/confirmation_group_3_draw_2/varied_hidden_42_bc/trace.npz",
+      "sha256": "619a2fecf9bfd5a3feb75a01540be14be076c274a77ed96ae127569af00df078"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/confirmation_group_4_draw_0/varied_hidden_42_bc/trace.npz",
+      "sha256": "24b160505cdcb17c465c56a108d4300622912225f7a61c6197a9909f6c22a09b"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/confirmation_group_4_draw_1/varied_hidden_42_bc/trace.npz",
+      "sha256": "ebd6f725f1eebfc0753ca61c1b33244a69441ac3939c2676ca149ce2ee047076"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/confirmation_group_4_draw_2/varied_hidden_42_bc/trace.npz",
+      "sha256": "2de6720b06a31abce8a19799d57eb023005481fb9b6732cac3e28249409dab52"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/nominal_0/varied_hidden_42_bc/trace.npz",
+      "sha256": "eac074c8826e24d887ee611de9d4f01b2d9fe6b937c790fc97c186800a11079d"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/nominal_1/varied_hidden_42_bc/trace.npz",
+      "sha256": "e155a6993b36f48e076021e25d4a55eb8ba006231f6225c93484a016379e63bb"
+    },
+    {
+      "path": "experiments/consolidated/v1/evaluation/all_all_correct/runs/nominal_2/varied_hidden_42_bc/trace.npz",
+      "sha256": "f14b8ade163be5f428e6a539327d87dcc55f4d0e4ec52705b6813691a4d54bc2"
+    },
+    {
+      "path": "experiments/consolidated/v1/scratch_v1/evaluation/all_all_correct/runs/grouped_group_0_draw_0/scratch_varied_hidden_42_bc/trace.npz",
+      "sha256": "b4f43c4e8eb2adc23afc7dfef299a88cfa98e22b6717c63901592918ea60ba04"
+    },
+    {
+      "path": "experiments/consolidated/v1/scratch_v1/evaluation/all_all_correct/runs/grouped_group_0_draw_1/scratch_varied_hidden_42_bc/trace.npz",
+      "sha256": "086fe797d2acdef8d4da6bd242225ef1e4a5042a5c97ba473e304a8976509e1c"
+    },
+    {
+      "path": "experiments/consolidated/v1/scratch_v1/evaluation/all_all_correct/runs/grouped_group_0_draw_2/scratch_varied_hidden_42_bc/trace.npz",
+      "sha256": "f4a667a05e1c4a3b74c7030e1ce67371559e77d7a09dfb4cacbd2fc3848ddd69"
+    },
+    {
+      "path": "experiments/consolidated/v1/scratch_v1/evaluation/all_all_correct/runs/grouped_group_1_draw_0/scratch_varied_hidden_42_bc/trace.npz",
+      "sha256": "143c5853f26a628260d43d23cbd6f98722d72afd0df0aa531d84000f2ad89bed"
+    },
+    {
+      "path": "experiments/consolidated/v1/scratch_v1/evaluation/all_all_correct/runs/grouped_group_1_draw_1/scratch_varied_hidden_42_bc/trace.npz",
+      "sha256": "b3f72e9f75d818e1b866e88fa00fed6ebaaf4254bcdace511678de844043cb54"
+    },
+    {
+      "path": "experiments/consolidated/v1/scratch_v1/evaluation/all_all_correct/runs/grouped_group_1_draw_2/scratch_varied_hidden_42_bc/trace.npz",
+      "sha256": "a680b2f9795f529a4cad2dfeacdc7a9087051493b4a758953e716ffcf1580efa"
+    },
+    {
+      "path": "experiments/consolidated/v1/scratch_v1/evaluation/all_all_correct/runs/grouped_group_2_draw_0/scratch_varied_hidden_42_bc/trace.npz",
+      "sha256": "8a60bafaba1cfc213a3341912af58eb8eb87589d821f9bec33546a7e21c135b3"
+    },
+    {
+      "path": "experiments/consolidated/v1/scratch_v1/evaluation/all_all_correct/runs/grouped_group_2_draw_1/scratch_varied_hidden_42_bc/trace.npz",
+      "sha256": "b2e8ec2462d74152ab7ac8605db4618c306cc616a034aba4f4bf274cc1b3e99d"
+    },
+    {
+      "path": "experiments/consolidated/v1/scratch_v1/evaluation/all_all_correct/runs/grouped_group_2_draw_2/scratch_varied_hidden_42_bc/trace.npz",
+      "sha256": "5c1bdee49eb66a7a9a73a97579be5c02093a726ef86a85c35dc33f7783387823"
+    },
+    {
+      "path": "experiments/consolidated/v1/scratch_v1/evaluation/all_all_correct/runs/grouped_group_3_draw_0/scratch_varied_hidden_42_bc/trace.npz",
+      "sha256": "915f771b95634da9dd5659f6c10ef644ec538cfd87776981290ad8e300015ad7"
+    },
+    {
+      "path": "experiments/consolidated/v1/scratch_v1/evaluation/all_all_correct/runs/grouped_group_3_draw_1/scratch_varied_hidden_42_bc/trace.npz",
+      "sha256": "d03af40d415089f3c4cbbc994f47279770636c8b1b7876715bed3ae0792f45a6"
+    },
+    {
+      "path": "experiments/consolidated/v1/scratch_v1/evaluation/all_all_correct/runs/grouped_group_3_draw_2/scratch_varied_hidden_42_bc/trace.npz",
+      "sha256": "66f32fc561d90a54eed2266a15f6e779c86c9bfd335d5da6e9e46e8a4dc88f13"
+    },
+    {
+      "path": "experiments/consolidated/v1/scratch_v1/evaluation/all_all_correct/runs/grouped_group_4_draw_0/scratch_varied_hidden_42_bc/trace.npz",
+      "sha256": "28a2eaef3ad9b4c7fde5e12081380607d12f81f25a57a7cd778c5b059db0649f"
+    },
+    {
+      "path": "experiments/consolidated/v1/scratch_v1/evaluation/all_all_correct/runs/grouped_group_4_draw_1/scratch_varied_hidden_42_bc/trace.npz",
+      "sha256": "02ed86da640f3a27e54dd50d40170ca954bebe6d5ae0980ed67b49817fe622fd"
+    },
+    {
+      "path": "experiments/consolidated/v1/scratch_v1/evaluation/all_all_correct/runs/grouped_group_4_draw_2/scratch_varied_hidden_42_bc/trace.npz",
+      "sha256": "8ffa1b1342d06e3bf743e655ae5cef8790f9cdf5552d593afaa1376be973c9fa"
+    },
+    {
+      "path": "experiments/consolidated/v1/scratch_v1/evaluation/all_all_correct/runs/confirmation_group_0_draw_0/scratch_varied_hidden_42_bc/trace.npz",
+      "sha256": "6332564b4a893811ccd86838330be21a0a79dcda2561ef303a38ee5604622b80"
+    },
+    {
+      "path": "experiments/consolidated/v1/scratch_v1/evaluation/all_all_correct/runs/confirmation_group_0_draw_1/scratch_varied_hidden_42_bc/trace.npz",
+      "sha256": "8c3e9f39a22863eef2c00215a4fc301e9abe6e7a68226a608be71450fc54e4a2"
+    },
+    {
+      "path": "experiments/consolidated/v1/scratch_v1/evaluation/all_all_correct/runs/confirmation_group_0_draw_2/scratch_varied_hidden_42_bc/trace.npz",
+      "sha256": "4c61fbfce454799bc68e059e806fa484151d020b36c821b88ce9774ea8273072"
+    },
+    {
+      "path": "experiments/consolidated/v1/scratch_v1/evaluation/all_all_correct/runs/confirmation_group_1_draw_0/scratch_varied_hidden_42_bc/trace.npz",
+      "sha256": "db563d955ffc7d3a2440cfce5db621f45ffcf50dbd3439032ccc4f6fb43ed9cd"
+    },
+    {
+      "path": "experiments/consolidated/v1/scratch_v1/evaluation/all_all_correct/runs/confirmation_group_1_draw_1/scratch_varied_hidden_42_bc/trace.npz",
+      "sha256": "5c29568e58e136255a2a38e48f6030058d252d280d9e63bf365cc8e0db5618bc"
+    },
+    {
+      "path": "experiments/consolidated/v1/scratch_v1/evaluation/all_all_correct/runs/confirmation_group_1_draw_2/scratch_varied_hidden_42_bc/trace.npz",
+      "sha256": "c89aa8e105a1ce87a33bb535f2951b0864db3a3133d47d4c83acb375f10ff406"
+    },
+    {
+      "path": "experiments/consolidated/v1/scratch_v1/evaluation/all_all_correct/runs/confirmation_group_2_draw_0/scratch_varied_hidden_42_bc/trace.npz",
+      "sha256": "340c32440ddf0b8e0d502b479d5fa51c8b6da2b3bdca44925d896ed29c9d6816"
+    },
+    {
+      "path": "experiments/consolidated/v1/scratch_v1/evaluation/all_all_correct/runs/confirmation_group_2_draw_1/scratch_varied_hidden_42_bc/trace.npz",
+      "sha256": "96a0e324a1cb528beb30599ca4d6178263208eaf6557fef6b262befcb5529708"
+    },
+    {
+      "path": "experiments/consolidated/v1/scratch_v1/evaluation/all_all_correct/runs/confirmation_group_2_draw_2/scratch_varied_hidden_42_bc/trace.npz",
+      "sha256": "c11989e6883562c85b9637e5f2314cd8ce04f56b123ee486ef70d382bb9de87b"
+    },
+    {
+      "path": "experiments/consolidated/v1/scratch_v1/evaluation/all_all_correct/runs/confirmation_group_3_draw_0/scratch_varied_hidden_42_bc/trace.npz",
+      "sha256": "0f5fd9c8393ec9d29a968739d7917ae9535f0ec6ec15b668d2e440bcadfde104"
+    },
+    {
+      "path": "experiments/consolidated/v1/scratch_v1/evaluation/all_all_correct/runs/confirmation_group_3_draw_1/scratch_varied_hidden_42_bc/trace.npz",
+      "sha256": "fdcd98f763ec66b47f180d92000d95ede319971701e616d588c47514dfa15452"
+    },
+    {
+      "path": "experiments/consolidated/v1/scratch_v1/evaluation/all_all_correct/runs/confirmation_group_3_draw_2/scratch_varied_hidden_42_bc/trace.npz",
+      "sha256": "3d14514f79d99a09f9c93cd2f27187b978ddf24ebab353cfac78b282b4f00f65"
+    },
+    {
+      "path": "experiments/consolidated/v1/scratch_v1/evaluation/all_all_correct/runs/confirmation_group_4_draw_0/scratch_varied_hidden_42_bc/trace.npz",
+      "sha256": "43f22504998fbbe4be65f690b14ed5d3daaebd61acb81476d6d3d19cfef59ffb"
+    },
+    {
+      "path": "experiments/consolidated/v1/scratch_v1/evaluation/all_all_correct/runs/confirmation_group_4_draw_1/scratch_varied_hidden_42_bc/trace.npz",
+      "sha256": "8d7868b0835f767478e452d15d5dd3121eb5c51fb6e3479c0292e65fceb912ed"
+    },
+    {
+      "path": "experiments/consolidated/v1/scratch_v1/evaluation/all_all_correct/runs/confirmation_group_4_draw_2/scratch_varied_hidden_42_bc/trace.npz",
+      "sha256": "5185fb80537c43a03e489d0067099aa07135a504a1729d352931f74f683f9109"
+    },
+    {
+      "path": "experiments/consolidated/v1/scratch_v1/evaluation/all_all_correct/runs/nominal_0/scratch_varied_hidden_42_bc/trace.npz",
+      "sha256": "818462d905e72c63e39c8beeaa4d09acdb8d01da9a80ccdc4bdd91ff9959ddb0"
+    },
+    {
+      "path": "experiments/consolidated/v1/scratch_v1/evaluation/all_all_correct/runs/nominal_1/scratch_varied_hidden_42_bc/trace.npz",
+      "sha256": "0d685fd6ea064e34bf9df72184d2fe1e0bacad2e4d5fc8e1558c66249cff9b8c"
+    },
+    {
+      "path": "experiments/consolidated/v1/scratch_v1/evaluation/all_all_correct/runs/nominal_2/scratch_varied_hidden_42_bc/trace.npz",
+      "sha256": "4b5fd8c67b99b4b5060903c2e7475aeb0afd3df7a2784dabca4831d72cf76fb0"
+    },
+    {
+      "path": "experiments/submission_controls/v1/evaluation/runs/original_101/zero_native/trace.npz",
+      "sha256": "febc35cc562401d3230144140ac4f3d1cd7f3dd0d18eafd77e43a76d66190651"
+    },
+    {
+      "path": "experiments/submission_controls/v1/evaluation/runs/original_202/zero_native/trace.npz",
+      "sha256": "20845e19a4846105815ee05cfe86931ac538a2967274a54c05c37b60bda685e3"
+    },
+    {
+      "path": "experiments/submission_controls/v1/evaluation/runs/original_303/zero_native/trace.npz",
+      "sha256": "7b9c32e1bb0a87fbc914f5fafd58a3b6b60c14cc7be3637962d52208f5e13d60"
+    },
+    {
+      "path": "experiments/submission_controls/v1/evaluation/runs/original_404/zero_native/trace.npz",
+      "sha256": "b155dccea2a1b1ae5d257831a64952afc479c245bac40a5dca60667200b0259b"
+    },
+    {
+      "path": "experiments/submission_controls/v1/evaluation/runs/original_505/zero_native/trace.npz",
+      "sha256": "f356a5d9fcca52eb92ea1aee110e53f296f97cb07550a19a1ba38b69c2a5d704"
+    },
+    {
+      "path": "experiments/submission_controls/v1/evaluation/runs/grouped_group_0_draw_0/zero_native/trace.npz",
+      "sha256": "d13c70148a715b954ba717c723015d1e1625fc1230583de32a5dce7d5fa24e5f"
+    },
+    {
+      "path": "experiments/submission_controls/v1/evaluation/runs/grouped_group_0_draw_1/zero_native/trace.npz",
+      "sha256": "be5ae97fe0d4c7f7a8e629cff3a1dc36a1fbb5ef3eeab464ec6b4586d6d39c36"
+    },
+    {
+      "path": "experiments/submission_controls/v1/evaluation/runs/grouped_group_0_draw_2/zero_native/trace.npz",
+      "sha256": "7175ac9eb57b95e7fc40dd599a76053dd562e20ba6611530444c54b3b925a33c"
+    },
+    {
+      "path": "experiments/submission_controls/v1/evaluation/runs/grouped_group_1_draw_0/zero_native/trace.npz",
+      "sha256": "291ac8008dc6bb8d01be2c001352176a498aa8de1cab508ed11ba159b27c46a1"
+    },
+    {
+      "path": "experiments/submission_controls/v1/evaluation/runs/grouped_group_1_draw_1/zero_native/trace.npz",
+      "sha256": "bf6ea893a33774ad3a1723fde61cb9e22c4af958d3fbdecced62906fc9f88ebb"
+    },
+    {
+      "path": "experiments/submission_controls/v1/evaluation/runs/grouped_group_1_draw_2/zero_native/trace.npz",
+      "sha256": "c9701eec295b79a19112ade3de93f80b73a9f4b65aa3986a4206d8c224e15ca5"
+    },
+    {
+      "path": "experiments/submission_controls/v1/evaluation/runs/grouped_group_2_draw_0/zero_native/trace.npz",
+      "sha256": "b3ebf9489a397cc0be121815074650b330ffdf7e689d68b51cb0fa6aba683f60"
+    },
+    {
+      "path": "experiments/submission_controls/v1/evaluation/runs/grouped_group_2_draw_1/zero_native/trace.npz",
+      "sha256": "197cc1db0ae2d07029aaf1f934b80de917ca601f208fa194d56a87cd5faaf934"
+    },
+    {
+      "path": "experiments/submission_controls/v1/evaluation/runs/grouped_group_2_draw_2/zero_native/trace.npz",
+      "sha256": "fc76cf8385f5c2cafd28fcd95c0392b613fa458ae98c96cc16b0db32db8d0332"
+    },
+    {
+      "path": "experiments/submission_controls/v1/evaluation/runs/grouped_group_3_draw_0/zero_native/trace.npz",
+      "sha256": "9900edc0969bdc14ea2c2e6d76cde56c16a4799e0f8baea50ad08995b0600dee"
+    },
+    {
+      "path": "experiments/submission_controls/v1/evaluation/runs/grouped_group_3_draw_1/zero_native/trace.npz",
+      "sha256": "46c1856ae3dcaf052056f63bb0e3e94076d0599f0456da222a1df483a6f20337"
+    },
+    {
+      "path": "experiments/submission_controls/v1/evaluation/runs/grouped_group_3_draw_2/zero_native/trace.npz",
+      "sha256": "ca7fa08aa5f770b18ed3bf375acc57bf2d199eedddd79bc96b81a0186cd6bd7b"
+    },
+    {
+      "path": "experiments/submission_controls/v1/evaluation/runs/grouped_group_4_draw_0/zero_native/trace.npz",
+      "sha256": "e5b838fa00f9c446eecb95e22ead5c9583f14f96013ae58cabf191804f5da8b6"
+    },
+    {
+      "path": "experiments/submission_controls/v1/evaluation/runs/grouped_group_4_draw_1/zero_native/trace.npz",
+      "sha256": "5818e9f51d232d4d4716788c24c02f9d42f5ac9d6f11d5b35f0ff8475d7d917b"
+    },
+    {
+      "path": "experiments/submission_controls/v1/evaluation/runs/grouped_group_4_draw_2/zero_native/trace.npz",
+      "sha256": "2bb05caeebdd2a6b01f2ac85235372640fe8028c74d48b827c77386c51cfd643"
+    },
+    {
+      "path": "experiments/submission_controls/v1/evaluation/runs/confirmation_group_0_draw_0/zero_native/trace.npz",
+      "sha256": "2293536b390b8c1a58bcd76766e2a07f05ac300cd50f2b876e227cb3aed75c83"
+    },
+    {
+      "path": "experiments/submission_controls/v1/evaluation/runs/confirmation_group_0_draw_1/zero_native/trace.npz",
+      "sha256": "06267932a3f522f842e7052a11fe6295a8f6b8200d9ae5437508948fe0ddcf98"
+    },
+    {
+      "path": "experiments/submission_controls/v1/evaluation/runs/confirmation_group_0_draw_2/zero_native/trace.npz",
+      "sha256": "4a107942782c1a3ccbeb6d8d51bee38f8c70afdf2650f78ccf646b99dedae52d"
+    },
+    {
+      "path": "experiments/submission_controls/v1/evaluation/runs/confirmation_group_1_draw_0/zero_native/trace.npz",
+      "sha256": "26ea38b81bc9d98be17df3e70d64788c898b241d631ba30b9600fc521a676ae5"
+    },
+    {
+      "path": "experiments/submission_controls/v1/evaluation/runs/confirmation_group_1_draw_1/zero_native/trace.npz",
+      "sha256": "62ab010cc15fb004b862993848e37cbf6ff17f8807a9e04dbd0b1e040aaf0972"
+    },
+    {
+      "path": "experiments/submission_controls/v1/evaluation/runs/confirmation_group_1_draw_2/zero_native/trace.npz",
+      "sha256": "2c7047a18de8be480d2f4d016aeab55d0a2d78e06654ac9a36c87bda84d3fd2d"
+    },
+    {
+      "path": "experiments/submission_controls/v1/evaluation/runs/confirmation_group_2_draw_0/zero_native/trace.npz",
+      "sha256": "0487c9c08d5dec5c77e4458c2be93d8d4e42d37340960360d5d61157714b5913"
+    },
+    {
+      "path": "experiments/submission_controls/v1/evaluation/runs/confirmation_group_2_draw_1/zero_native/trace.npz",
+      "sha256": "7d6fe7047d930239df8a41726bad4bfcf57188b0ce55620055ab9cc464046dc2"
+    },
+    {
+      "path": "experiments/submission_controls/v1/evaluation/runs/confirmation_group_2_draw_2/zero_native/trace.npz",
+      "sha256": "9fdc52e2a7b70c952c69614877051a7c5075a23d3359ef881b24a913cf3220cb"
+    },
+    {
+      "path": "experiments/submission_controls/v1/evaluation/runs/confirmation_group_3_draw_0/zero_native/trace.npz",
+      "sha256": "72a818686208a5e1207dea1c47ef58129542bfdca3dc8ec2f5e43d088e4e5542"
+    },
+    {
+      "path": "experiments/submission_controls/v1/evaluation/runs/confirmation_group_3_draw_1/zero_native/trace.npz",
+      "sha256": "825b12c2d411e4186c19e10962a74ca922c821e97650fffce201b38d4be03d6a"
+    },
+    {
+      "path": "experiments/submission_controls/v1/evaluation/runs/confirmation_group_3_draw_2/zero_native/trace.npz",
+      "sha256": "d035583b5e547f38e13e2e97a23ea8af97e7f11da043e09b04474f04a1a2574c"
+    },
+    {
+      "path": "experiments/submission_controls/v1/evaluation/runs/confirmation_group_4_draw_0/zero_native/trace.npz",
+      "sha256": "30c1cc32b136b3c98afc85db70a7cf149dfe1764e99e0e545ac11e19b9844006"
+    },
+    {
+      "path": "experiments/submission_controls/v1/evaluation/runs/confirmation_group_4_draw_1/zero_native/trace.npz",
+      "sha256": "862874baa8627c6fb37d07a13a19252a7caaa6cd4a83aae0986a120eef463d40"
+    },
+    {
+      "path": "experiments/submission_controls/v1/evaluation/runs/confirmation_group_4_draw_2/zero_native/trace.npz",
+      "sha256": "dfcb8042dd69aec09a65767889e727b0b4c874deb4335c76013a920c847a8a14"
+    },
+    {
+      "path": "experiments/submission_controls/v1/evaluation/runs/nominal_0/zero_native/trace.npz",
+      "sha256": "95f0ac6c4d6ca0c1542563b0d485d06f9857ca92980f4bed1e9a0023bab9cff6"
+    },
+    {
+      "path": "experiments/submission_controls/v1/evaluation/runs/nominal_1/zero_native/trace.npz",
+      "sha256": "2a92b9e7ecc5b9d75c5298a1c99b41899d360140916c2b6deb1bb4b44d77d132"
+    },
+    {
+      "path": "experiments/submission_controls/v1/evaluation/runs/nominal_2/zero_native/trace.npz",
+      "sha256": "442da980ab1a63c4a0fb62d56a349b948ff5807faff15b232e1e5b51c8725c59"
+    },
+    {
+      "path": "experiments/consolidated/v1/scratch_v1/evaluation/all_all_correct/runs/original_101/scratch_original_hidden_42_gail_random/trace.npz",
+      "sha256": "71f1e16879a7c7c52300edf1f56e4cae999902c80d615fe113fa0db4e68c6145"
+    },
+    {
+      "path": "experiments/consolidated/v1/scratch_v1/evaluation/all_all_correct/runs/original_202/scratch_original_hidden_42_gail_random/trace.npz",
+      "sha256": "969f021caa026593be1599c0fcc0d91607da9abe14c30f67cc2eed3aab59395c"
+    },
+    {
+      "path": "experiments/consolidated/v1/scratch_v1/evaluation/all_all_correct/runs/original_303/scratch_original_hidden_42_gail_random/trace.npz",
+      "sha256": "07f3f77821937857b7d58a4f880e5558c2c1413a50a2f5ec8e7f13fdb569a0c8"
+    },
+    {
+      "path": "experiments/consolidated/v1/scratch_v1/evaluation/all_all_correct/runs/original_404/scratch_original_hidden_42_gail_random/trace.npz",
+      "sha256": "f1a74f385aa7febaa0a03b01cfa9b9f611dba99858e6ebe4a41046e298716b95"
+    },
+    {
+      "path": "experiments/consolidated/v1/scratch_v1/evaluation/all_all_correct/runs/original_505/scratch_original_hidden_42_gail_random/trace.npz",
+      "sha256": "e3c8f996ca57f0871d4ea09034734019bdf4f983ebea0c350d3675b43e3262d9"
+    },
+    {
+      "path": "experiments/consolidated/v1/scratch_v1/evaluation/all_all_correct/runs/grouped_group_0_draw_0/scratch_original_hidden_42_gail_random/trace.npz",
+      "sha256": "52dfb8e8b21b6208ae8a8e9a8d4d8db564215531cca060f71075f7f21fde8ba2"
+    },
+    {
+      "path": "experiments/consolidated/v1/scratch_v1/evaluation/all_all_correct/runs/grouped_group_0_draw_1/scratch_original_hidden_42_gail_random/trace.npz",
+      "sha256": "10d0708c071c3f6526312ead9e3a4545bb2841694506030c5d395c1b5ee75e40"
+    },
+    {
+      "path": "experiments/consolidated/v1/scratch_v1/evaluation/all_all_correct/runs/grouped_group_0_draw_2/scratch_original_hidden_42_gail_random/trace.npz",
+      "sha256": "723c63f7730a75337581b6b295091015f9edda55bbb5426c4b079bd139ae4cfc"
+    },
+    {
+      "path": "experiments/consolidated/v1/scratch_v1/evaluation/all_all_correct/runs/grouped_group_1_draw_0/scratch_original_hidden_42_gail_random/trace.npz",
+      "sha256": "7963142acd062220ac540cb32f958ee102399150c435ac0c2296018497c1d82e"
+    },
+    {
+      "path": "experiments/consolidated/v1/scratch_v1/evaluation/all_all_correct/runs/grouped_group_1_draw_1/scratch_original_hidden_42_gail_random/trace.npz",
+      "sha256": "6b2afe96b8449e37591074c58ede051688f04fb0666c18916a7beb54d0ed05ec"
+    },
+    {
+      "path": "experiments/consolidated/v1/scratch_v1/evaluation/all_all_correct/runs/grouped_group_1_draw_2/scratch_original_hidden_42_gail_random/trace.npz",
+      "sha256": "2c032124bf653b378ffea2b42d8be59e42049e789617f21b7d3ccf89e160fbf3"
+    },
+    {
+      "path": "experiments/consolidated/v1/scratch_v1/evaluation/all_all_correct/runs/grouped_group_2_draw_0/scratch_original_hidden_42_gail_random/trace.npz",
+      "sha256": "bc6d83f8b68c404867f733d03606553a7080a210ed52606afcf7409d9c917bcc"
+    },
+    {
+      "path": "experiments/consolidated/v1/scratch_v1/evaluation/all_all_correct/runs/grouped_group_2_draw_1/scratch_original_hidden_42_gail_random/trace.npz",
+      "sha256": "f36932ad0d3633512fbed04f04b10cb6158181821dd4975dc9fcfeb32379699c"
+    },
+    {
+      "path": "experiments/consolidated/v1/scratch_v1/evaluation/all_all_correct/runs/grouped_group_2_draw_2/scratch_original_hidden_42_gail_random/trace.npz",
+      "sha256": "d8849540ac3644547e6df628eab9aa81c0f361deae066c7d4ebcea6aae9b085b"
+    },
+    {
+      "path": "experiments/consolidated/v1/scratch_v1/evaluation/all_all_correct/runs/grouped_group_3_draw_0/scratch_original_hidden_42_gail_random/trace.npz",
+      "sha256": "c02205de3c9e4a1047ee175ac092a959eb67991446effb9a51143af3d7fbdc61"
+    },
+    {
+      "path": "experiments/consolidated/v1/scratch_v1/evaluation/all_all_correct/runs/grouped_group_3_draw_1/scratch_original_hidden_42_gail_random/trace.npz",
+      "sha256": "e464e3683d25b4b78392b1ee8583d012884df1606736dd2c053f1c74e4c59e71"
+    },
+    {
+      "path": "experiments/consolidated/v1/scratch_v1/evaluation/all_all_correct/runs/grouped_group_3_draw_2/scratch_original_hidden_42_gail_random/trace.npz",
+      "sha256": "e78b74652468fbdee4133da08d2fa69bf4022ea0006d14fe4049e9932fd7bdec"
+    },
+    {
+      "path": "experiments/consolidated/v1/scratch_v1/evaluation/all_all_correct/runs/grouped_group_4_draw_0/scratch_original_hidden_42_gail_random/trace.npz",
+      "sha256": "0114ea4c30d50aa72f0bf8c78e47e804f5ac981f80451fbcec57f37ebd411f8a"
+    },
+    {
+      "path": "experiments/consolidated/v1/scratch_v1/evaluation/all_all_correct/runs/grouped_group_4_draw_1/scratch_original_hidden_42_gail_random/trace.npz",
+      "sha256": "e0f27db0767aa18d2c1f15750551a7e64a35d5245e26efca6e0cb1258f03c502"
+    },
+    {
+      "path": "experiments/consolidated/v1/scratch_v1/evaluation/all_all_correct/runs/grouped_group_4_draw_2/scratch_original_hidden_42_gail_random/trace.npz",
+      "sha256": "229f2a1b0cf48409c07e84e522437ae1cf5811625335c2105ced5b19e4c37911"
+    },
+    {
+      "path": "experiments/consolidated/v1/scratch_v1/evaluation/all_all_correct/runs/confirmation_group_0_draw_0/scratch_original_hidden_42_gail_random/trace.npz",
+      "sha256": "2b2480d4135bcf4a2176f3f9ab66e1d94be5685b31101777f910fa1d2d765689"
+    },
+    {
+      "path": "experiments/consolidated/v1/scratch_v1/evaluation/all_all_correct/runs/confirmation_group_0_draw_1/scratch_original_hidden_42_gail_random/trace.npz",
+      "sha256": "94106d29564e1b577600418703c4d1e3a2b0fdb97d511d1f746553514c2af15c"
+    },
+    {
+      "path": "experiments/consolidated/v1/scratch_v1/evaluation/all_all_correct/runs/confirmation_group_0_draw_2/scratch_original_hidden_42_gail_random/trace.npz",
+      "sha256": "9f0c04d80e6878936aa42d020a927b7e08c2db556295774713536acbfbbceac2"
+    },
+    {
+      "path": "experiments/consolidated/v1/scratch_v1/evaluation/all_all_correct/runs/confirmation_group_1_draw_0/scratch_original_hidden_42_gail_random/trace.npz",
+      "sha256": "a8260d65d005b4d0a5c4e709742338f3b49d0799a9288ba15d3aa81a49201efa"
+    },
+    {
+      "path": "experiments/consolidated/v1/scratch_v1/evaluation/all_all_correct/runs/confirmation_group_1_draw_1/scratch_original_hidden_42_gail_random/trace.npz",
+      "sha256": "132fca2d18fa1a2bd3f45142ffdb55afe98ddc345b74f80fa686ea94045229ba"
+    },
+    {
+      "path": "experiments/consolidated/v1/scratch_v1/evaluation/all_all_correct/runs/confirmation_group_1_draw_2/scratch_original_hidden_42_gail_random/trace.npz",
+      "sha256": "fbc5598550d744fbe89fab407789087bfcce4079582fb092328dbe59f1a845f5"
+    },
+    {
+      "path": "experiments/consolidated/v1/scratch_v1/evaluation/all_all_correct/runs/confirmation_group_2_draw_0/scratch_original_hidden_42_gail_random/trace.npz",
+      "sha256": "d354df868dfd73b32675bd510e523ab5af4c9b7d3e6ba0e56f9c87d33945d90b"
+    },
+    {
+      "path": "experiments/consolidated/v1/scratch_v1/evaluation/all_all_correct/runs/confirmation_group_2_draw_1/scratch_original_hidden_42_gail_random/trace.npz",
+      "sha256": "61c036e92157632cb1156b7dfd423d3baa30e5771073d8d9321595768a134d14"
+    },
+    {
+      "path": "experiments/consolidated/v1/scratch_v1/evaluation/all_all_correct/runs/confirmation_group_2_draw_2/scratch_original_hidden_42_gail_random/trace.npz",
+      "sha256": "1b57b69776dac10647d8c8ea32d76977e7bfaf5751a4832a2f2191f31ce12943"
+    },
+    {
+      "path": "experiments/consolidated/v1/scratch_v1/evaluation/all_all_correct/runs/confirmation_group_3_draw_0/scratch_original_hidden_42_gail_random/trace.npz",
+      "sha256": "b0079197b7f8b21823f58d00bd21a92f7d9e6d663831d96f35ddce94658092f7"
+    },
+    {
+      "path": "experiments/consolidated/v1/scratch_v1/evaluation/all_all_correct/runs/confirmation_group_3_draw_1/scratch_original_hidden_42_gail_random/trace.npz",
+      "sha256": "7cd88a68df55bae0866d440913d44d59195cdb350c7fd35df89e4e550a3dd1c2"
+    },
+    {
+      "path": "experiments/consolidated/v1/scratch_v1/evaluation/all_all_correct/runs/confirmation_group_3_draw_2/scratch_original_hidden_42_gail_random/trace.npz",
+      "sha256": "8ea035cc4874df36b11139f47ca88ebfb3e77a27864fc541e3237d8b2792b5f3"
+    },
+    {
+      "path": "experiments/consolidated/v1/scratch_v1/evaluation/all_all_correct/runs/confirmation_group_4_draw_0/scratch_original_hidden_42_gail_random/trace.npz",
+      "sha256": "cac96eb7afb1d70a9ff20428a6b1f91f242043a8141ef5f3787c37d976585939"
+    },
+    {
+      "path": "experiments/consolidated/v1/scratch_v1/evaluation/all_all_correct/runs/confirmation_group_4_draw_1/scratch_original_hidden_42_gail_random/trace.npz",
+      "sha256": "6f04a1395af0b5a21957634688568df6e42d60042f088f1e73f42b89c14d50d8"
+    },
+    {
+      "path": "experiments/consolidated/v1/scratch_v1/evaluation/all_all_correct/runs/confirmation_group_4_draw_2/scratch_original_hidden_42_gail_random/trace.npz",
+      "sha256": "1bb86ba6a2f887954d629aabc530cd95f53a602015a85f04209adb271a377c67"
+    },
+    {
+      "path": "experiments/consolidated/v1/scratch_v1/evaluation/all_all_correct/runs/nominal_0/scratch_original_hidden_42_gail_random/trace.npz",
+      "sha256": "d50481d728b16781875e98cf23cdb3a72b232fc5dc6370b0a65f755b3bce2c7c"
+    },
+    {
+      "path": "experiments/consolidated/v1/scratch_v1/evaluation/all_all_correct/runs/nominal_1/scratch_original_hidden_42_gail_random/trace.npz",
+      "sha256": "1b94a043795968fb86c1c9f0dd38c7d4c93db508b4610606de40db5a65994095"
+    },
+    {
+      "path": "experiments/consolidated/v1/scratch_v1/evaluation/all_all_correct/runs/nominal_2/scratch_original_hidden_42_gail_random/trace.npz",
+      "sha256": "3d2296d4e517f6373df224756795cf1ba061dd8556fc18d1f9ac616baf81d381"
+    }
+  ],
+  "python": "3.9.25",
+  "numpy": "1.26.4",
+  "pandas": "2.3.3",
+  "scipy": "1.13.1",
+  "matplotlib": "3.9.4",
+  "bootstrap_seed": 20261029,
+  "bootstrap_resamples": 5000,
+  "unique_deployments": 2223,
+  "duplicate_records_verified": 1568,
+  "unique_controllers": 66,
+  "sampled_rounds": 30,
+  "active_hours": 37.05,
+  "figures": [
+    {
+      "name": "01_progress_distributions",
+      "caption": "30 shared surface/task rounds per model; whiskers = 1.5 IQR; dots = rounds; triangle = mean. No training-seed CI."
+    },
+    {
+      "name": "02_shared_variation",
+      "caption": "Balanced panel of walking controllers; round includes surface AND task. Residual includes simulator variation; this is not causal ANOVA."
+    },
+    {
+      "name": "03_mean_tail_stability",
+      "caption": "Left: 30 rounds/checkpoint; tails are descriptive order statistics. Right: same rounds, symmetric-log fall axis (linear below 0.1)."
+    },
+    {
+      "name": "04_two_sources_of_variation",
+      "caption": "These standard deviations describe different quantities. Continued replicas share an original parent; n=3 gives a weak estimate of training variability."
+    },
+    {
+      "name": "05_paired_effects",
+      "caption": "95% stratified round-bootstrap intervals conditional on observed checkpoints; exploratory, no multiplicity correction or population-of-training-seeds claim."
+    },
+    {
+      "name": "06_metric_relationships",
+      "caption": "Spearman correlations before and after round centering; walking controllers only."
+    },
+    {
+      "name": "07_error_distribution",
+      "caption": "Each histogram entry and box-plot observation is a deployment, not an independent time step. Top 1% = 30 of 3,000 frames."
+    },
+    {
+      "name": "08_fidelity_tradeoffs",
+      "caption": "One point per checkpoint, 30-round means. Shared held-out test pool; architectures and training histories are mixed, so trends are not causal."
+    },
+    {
+      "name": "09_probe_controls",
+      "caption": "Full target inventory for original BC/DAgger; raw and random features are necessary controls."
+    },
+    {
+      "name": "10_bc_budget_history",
+      "caption": "Lines pair seed labels, not continuous training for the continued arm; three replicas per architecture. 200-epoch fits have not established convergence."
+    },
+    {
+      "name": "11_localization_audit",
+      "caption": "Left: one sampled oracle segment. Right: 30 sampled rounds/model. Diagnostic excludes reset/target-change windows; historical metrics unchanged."
+    },
+    {
+      "name": "12_optimization_and_scene",
+      "caption": "Left: nearby initial BC/DAgger points are 66,500 / 64,500 updates, not equal. Right: paired rounds; black lines are means; unequal suite sizes."
+    }
+  ],
+  "script_sha256": "0214e480bc50b78a48ed06f475786fc10f5224906500377fe1e3fc9a79b2f5f3",
+  "implementation_sources": {
+    "consolidated/eval_worker.py": "3b736ce0d41b0bd1f383db177dea90c2dc522dcd83861148d4c53ad146f662a2",
+    "world/World.py": "4fb38ad95a8b4407ec0e83af4d290515f5853fc7f7c88d1cac626fb85bd10579",
+    "world/Robot.py": "59be9a8671c1c89de911a55d013d0b7f680d26ff5058cc84d0cc76d5446fda5f",
+    "representation_probing/run.py": "6a49c45eb922a64d378844d282101a00b0e471736a2bd23f49a56b0ebe7eaa2d"
+  }
+}

@@ -1,0 +1,5 @@
+algorithm,n_policies,round_fraction
+bc,19,0.9971128622699623
+dagger_mixed,13,0.9927118231450384
+gail_bc,13,0.9963666545411205
+gail_dagger_mixed,13,0.9937717298525313

@@ -1,0 +1,14 @@
+{
+  "copied_from": "submission_controls",
+  "date": "2026-10-29",
+  "purpose": "Isolated convergence diagnostics and untrained-network engine controls; original files remain unchanged.",
+  "sources": {
+    "run_submission_controls.sh": "079c441ce5a908c7caa22f001b2f3cda5d253773ba786bea9cbe5f815e659373",
+    "submission_controls/__init__.py": "4113eb4d8978e1f377219b49a797ce7aff7b1bb97021681c178ef37a98e27242",
+    "submission_controls/report.py": "045028ec898677b089c037a37567c9d86b3ef4fe53066172f43f9ea4f3981d60",
+    "submission_controls/run.py": "996110e149a23988bbd25c4436c4f858b1d6c4253aed40a4711c8a04f1f20f81",
+    "submission_controls/test_pipeline.py": "9718444f0cff91ed0ad7fca3db8ee209d5c2f66b66c3dc690911bb722b672742",
+    "submission_controls/train.py": "356f7ace470a966c8480b36cb3aaf737b14b7d68e4a5f6b4a30b2db2d6dfb89e",
+    "submission_controls/README.md": "4fbd18f81ce2c923de735c0e6da972f1ea5ae0b390ca5916a19c49d004412698"
+  }
+}

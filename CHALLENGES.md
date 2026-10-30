@@ -1,5 +1,94 @@
 # Imitation-Learning Challenges and Engineering Decisions
 
+## 2026-10-30: Stopping rules, repeated deployment and probes qualify the ranking
+
+Completed26 fixed-data extensions all reached declared validation patience.
+Original DAgger now has lower held-out/on-policy action MSE than extended BC,
+but uses480,375 versus288,855performed lineage updates. The earlier matched-update
+BC advantage remains valid at its allocation. Neither endpoint establishes a
+budget-independent algorithm ranking or converged interactive DAgger. Continued
+varied BC's large fidelity deficit mostly narrows with extra fitting; improvement
+in action fidelity does not uniformly improve progress/falls (scratch hidden BC
+progress−0.269m/min; falls1→7 across90minutes).
+
+Two continued DAgger fits select epoch0. Explicit comparison confirms unchanged
+weight tensors, yet repeated same-round evaluations differ: paired progress SDs
+0.779/0.882m, fall counts2→1 and2→3 across30sampled runs. Small endpoint effects
+can therefore reflect deployment variation. These two cases do not identify its
+physical source or justify a universal noise correction. Report conditional
+round-bootstrap intervals separately from training/simulator uncertainty.
+
+Random-network engine controls make almost no progress even though many runs have
+no falls. Their hidden features still decode commands/future oracle velocity well.
+Likewise DAgger's improved action fidelity accompanies a weaker phase×roll readout.
+High initializer CKA coexists with large prediction gains. Thus decodability,
+geometric similarity, useful control and causal feature use must remain distinct.
+Report all30targets and raw/random/shuffled/expert controls, not only favorable
+features. Future outcomes are under oracle actions on shared oracle states.
+
+Full analysis: evaluation/convergence_2026-10-30/REPORT.md. Historical source and
+evaluation artifacts were preserved. Existing localization-rate caveat remains
+unresolved; future-direction probe labels inherit it. Probe extension lives outside
+fingerprinted training packages so completed training/evaluation resumes remain valid.
+
+## 2026-10-29: Convergence diagnostics must retain incumbents and lineage costs
+
+New convergence_controls copy leaves submission_controls and all historical inputs
+unchanged. It continues existing BC/DAgger fits on fixed datasets, including varied
+continued/scratch hidden/input lineages. Some selected varied checkpoints precede
+the final allocated epoch; restore the selected policy AND its synchronized Adam
+state, retain all performed historical compute in accounting, and record selected
+final-fit costs separately. Do not count an older scratch100-epoch run as inherited
+work for a200-epoch control that originally restarted from random initialization.
+
+Evaluate epoch0 before fitting, include it in validation-only model selection,
+and initialize patience from it. Otherwise a continuation could silently replace
+the inherited model with a worse first new epoch. Cap exhaustion is not a passed
+convergence test; even patience only establishes the declared validation plateau
+on fixed data, not mathematical convergence or online DAgger distribution coverage.
+
+User clarified the engine test as outputs from an untrained random-weight network
+on real observations, not independently drawn action noise or randomized sensor
+inputs. Preserve these three distinct baselines. Engine-only jobs share deployment
+receipts with full evaluation; its summary must remain independent of later fitting
+artifacts so it can still resume. Historical zero-model receipts lack metrics.json:
+audit them with the original zero-model schema, not a generic trained-model schema.
+Offline tests and source audit cover these cases. Existing tracking-rate caveat
+remains explicit; no historical metric or experiment was silently replaced.
+
+## 2026-10-29: Localization freshness contaminates instantaneous tracking interpretation
+
+Broad EDA audited 294 saved traces and the evaluator/localization implementation.
+`consolidated/eval_worker.py` differences `loc_head_position` each 20 ms step, while
+`World.update` refreshes vision localization on vision messages and Robot documents
+40 ms position-history intervals. Original oracle traces contain exactly 50% zero
+speed records; an example sampled trace alternates zero/nonzero at every step.
+These stale positions are not evidence that the robot stands still half the time.
+
+The evaluator assigns direction error 1 when movement is undefined, adding an
+approximately .5 offset for this cadence. Original oracle's historical mean .65712
+becomes .31468 in a separate 40 ms diagnostic excluding target changes/resets and
+undefined directions. This is NOT a drop-in corrected metric: windows/exclusions
+differ. Saved metrics remain unchanged; next step is a versioned all-controller
+audit with explicit localization freshness/timestamps. Do not multiply averaged
+velocity by two: alternating zero/doubled increments can preserve time averages.
+The future_200ms_direction_error probe target inherits the legacy convention;
+unrelated targets such as phase×roll are not invalidated by this finding.
+Evidence, code and diagnostics: evaluation/exploratory_2026-10-29/REPORT.md §8.
+
+## 2026-10-29: Pooled variability and repeated records can mislead EDA
+
+Compatible reports repeat parent deployments. The EDA verified identity, hashes
+and common numeric metrics while removing 1,568 repeated records, leaving 2,223
+deployments. In the balanced 59-walking-controller × 30-round panel, shared-round
+variation explains 99.48% of progress sum of squares; round includes both slip and
+task. Pooled progress–jerk Spearman .904 drops to .022 after round centering.
+Neither a pooled mechanical correlation nor raw across-round SD isolates policy
+quality. Bootstrap intervals average observed training replicas within rounds,
+then resample within designed groups; they exclude training-population uncertainty.
+Tail statistics use only three rounds/checkpoint and are exploratory. Documentation
+now distinguishes these limits and preserves all original reports and metrics.
+
 ## 2026-10-29: Near-budget curve points are not causal identification
 
 Secondfeedback suggested the initialBCpoint matched DAgger's updatecount and

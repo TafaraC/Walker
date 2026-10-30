@@ -22,6 +22,8 @@ research version of the upstream project.
 - [Paper draft](evaluation/FINAL_PAPER_DRAFT.md) and [LaTeX package instructions](evaluation/paper/README.md).
 - [Presentation](evaluation/presentation/CONSOLIDATED_PAPER_SLIDES.pdf) and [slide explanations](evaluation/presentation/CONSOLIDATED_PAPER_NOTES.md).
 - [Findings and numerical results](evaluation/CONSOLIDATED_RESULTS_REPORT_2026-10-15.md) and [optimization controls](evaluation/SUBMISSION_FEEDBACK_RESPONSE_2026-10-28.md).
+- [Exploratory analysis and measurement audit](evaluation/exploratory_2026-10-29/REPORT.md) and [12-figure atlas](evaluation/exploratory_2026-10-29/EDA_FIGURES.pdf).
+- [Extended-fitting results, engine controls and new probes](evaluation/convergence_2026-10-30/REPORT.md) and [11-figure atlas](evaluation/convergence_2026-10-30/EDA_FIGURES.pdf).
 - [Setup workbook](docs/learning/README.md), [commands](COMMANDS.md) and [repository/artifact guide](REPOSITORY.md).
 
 Large datasets, experiment outputs and learned checkpoints are distributed

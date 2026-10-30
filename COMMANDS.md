@@ -5,6 +5,47 @@ New to the runtime or scientific Python? Start with the
 and its [editable source](docs/learning/EXPERIMENT_SETUP_WORKBOOK.md).
 It includes six guided exercises, expected answers and setup troubleshooting.
 
+## Completed convergence run: probes and exploratory analysis (2026-10-30)
+
+```bash
+# Offline, CPU only. Uses existing completed checkpoints/trajectories.
+/home/pamnt/miniconda3/envs/fcportugal/bin/python evaluation/convergence_2026-10-30/probe.py audit
+/home/pamnt/miniconda3/envs/fcportugal/bin/python evaluation/convergence_2026-10-30/probe.py run
+/home/pamnt/miniconda3/envs/fcportugal/bin/python evaluation/convergence_2026-10-30/analyze.py
+```
+
+Completed report: [interpretation](evaluation/convergence_2026-10-30/REPORT.md),
+[11-page graph atlas](evaluation/convergence_2026-10-30/EDA_FIGURES.pdf),
+[contracts and output guide](evaluation/convergence_2026-10-30/README.md).
+Raw probe fits remain in experiments/representation_probing/convergence_all_v1/.
+`probe.py report` reuses verified fitted probes. No server needs to be started.
+
+## Convergence and untrained-network controls (2026-10-29)
+
+```bash
+# Combined original + varied, continued + scratch, hidden + input BC/DAgger.
+./run_convergence_controls.sh run --domain all
+
+# Original fits only, or varied fits only; each has its own output tree.
+./run_convergence_controls.sh run
+./run_convergence_controls.sh run --domain varied
+
+# Engine controls first; the later all-domain run reuses these deployments.
+./run_convergence_controls.sh engine --domain all
+./run_convergence_controls.sh report --domain all --engine-only
+
+# Optional separate small end-to-end smoke.
+./run_convergence_controls.sh run --domain all --quick
+```
+
+Existing datasets and validation-selected checkpoints/optimizers are reused;
+no new training collections. Three randomly initialized untrained networks receive
+normal observations and send their outputs through the unchanged walking engine.
+Servers start automatically. `plan`, `audit`, `train`, `evaluate`, `report` are
+available separately; keep the same `--domain` and stopping-rule flags throughout.
+Full all-domain scope has26fits and982new60-seconddeployments. Details, stopping
+limits, outputs and interpretation: [convergence_controls/README.md](convergence_controls/README.md).
+
 ## Final-submission controls (2026-10-28)
 
 ```bash

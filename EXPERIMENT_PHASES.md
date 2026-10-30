@@ -1,5 +1,59 @@
 # Experiment phase ledger
 
+## 2026-10-30 — Convergence evaluation and follow-up probes/EDA complete
+
+User completed the combined convergence batch:26validation-stopped extensions,
+3random-network controls and982new deployments. All26fits reached patience rather
+than cap exhaustion. New analysis verified completion receipts and merged3,205
+unique deployments across prior/current reports. No new simulation or policy
+training was performed during analysis.
+
+Ran524multitarget regression probes across131representations (56checkpoints plus
+expert/raw/random controls), preserving shared oracle data/splits and all30targets.
+Added before/after CKA and exact-weight repeatability checks. Report,11-page figure
+atlas, numerical tables and reproduction code: evaluation/convergence_2026-10-30/.
+
+Original DAgger regains lower action MSE at greater performed cost; varied BC closes
+most of its earlier fidelity gap, while some task progress decreases. Random
+networks fail progress despite good feature readouts. Two unchanged checkpoints
+show visible repeated-evaluation variation. These findings qualify budget and
+representation claims; paper/slides remain unchanged pending integration. Earlier
+reports preserved. User authorized committing source/docs/results, not a remote push.
+
+## 2026-10-29 — Convergence and random-network control pipeline prepared
+
+Added isolated convergence_controls and run_convergence_controls.sh, copied from
+submission_controls with original source hashes retained. Scope selectors cover
+2originalfits,24variedfits or26combined BC/mixed-DAgger fixed-dataset diagnostics.
+Varied scope includes continued/scratch, hidden/input and three training seeds;
+scratch BC reuses its completed200-epoch selected checkpoint. No new data collection.
+Validation-only patience/cap rules retain the incumbent and explicit inherited costs.
+
+Three untrained random-weight networks on real observations test the gait-engine
+interface against existing zero, uniform-random and oracle references. Owned-server
+evaluation uses the prior38round schedule (33forvariedmodels); combined982newruns.
+Engine runs can execute independently and are reused by later full evaluation.
+Unit checks, full26job dependency audit and ten tiny all-domain supervised fits
+passed locally. Live smoke/full experiments have not been launched. Commands and
+contracts are in convergence_controls/README.md and PIPELINES.md.
+
+## 2026-10-29 — Exploratory evidence and measurement audit complete
+
+Added `evaluation/exploratory_2026-10-29/REPORT.md`, 12-figure PDF atlas, analysis
+code, provenance and tables covering 2,223 deduplicated deployments from the
+compatible consolidated, scratch and submission-control batches. Exploration
+separates between-round from between-training-seed variation, paired tails,
+fidelity/task trade-offs, pooled versus round-centered mechanical associations,
+and all existing probe targets against raw/random controls. No new experiments.
+
+The 294-trace audit discovered stale localization at alternate action steps:
+the 20 ms tracking metric includes a zero-displacement penalty despite 40 ms visual
+position updates. Separate offline diagnostics document the effect; historical
+evaluation data and final-paper/slides remain unchanged. A versioned metric audit
+is now a priority before strengthening tracking claims. Report distinguishes
+exploratory patterns from causal claims and conditional intervals from uncertainty
+over training populations; old reports remain intact.
+
 ## 2026-10-29 — Second paper-feedback revision
 
 Revised paper and IEEE package with direct RQ3 metrics, matched-model surface

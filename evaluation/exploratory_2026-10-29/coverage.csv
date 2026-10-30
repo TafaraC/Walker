@@ -1,0 +1,94 @@
+family,suite,deployments,checkpoints,active_minutes
+BC matched updates,confirmation,15,1,15.0
+BC matched updates,grouped,15,1,15.0
+BC matched updates,nominal,3,1,3.0
+BC matched updates,original,5,1,5.0
+Continued hidden BC,confirmation,45,3,45.0
+Continued hidden BC,grouped,45,3,45.0
+Continued hidden BC,nominal,9,3,9.0
+Continued hidden DAgger,confirmation,45,3,45.0
+Continued hidden DAgger,grouped,45,3,45.0
+Continued hidden DAgger,nominal,9,3,9.0
+Continued hidden GAIL–BC,confirmation,45,3,45.0
+Continued hidden GAIL–BC,grouped,45,3,45.0
+Continued hidden GAIL–BC,nominal,9,3,9.0
+Continued hidden GAIL–DAgger,confirmation,45,3,45.0
+Continued hidden GAIL–DAgger,grouped,45,3,45.0
+Continued hidden GAIL–DAgger,nominal,9,3,9.0
+Continued input BC,confirmation,45,3,45.0
+Continued input BC,grouped,45,3,45.0
+Continued input BC,nominal,9,3,9.0
+Continued input DAgger,confirmation,45,3,45.0
+Continued input DAgger,grouped,45,3,45.0
+Continued input DAgger,nominal,9,3,9.0
+Continued input GAIL–BC,confirmation,45,3,45.0
+Continued input GAIL–BC,grouped,45,3,45.0
+Continued input GAIL–BC,nominal,9,3,9.0
+Continued input GAIL–DAgger,confirmation,45,3,45.0
+Continued input GAIL–DAgger,grouped,45,3,45.0
+Continued input GAIL–DAgger,nominal,9,3,9.0
+Frozen BC,confirmation,15,1,15.0
+Frozen BC,grouped,15,1,15.0
+Frozen BC,nominal,3,1,3.0
+Frozen BC,original,5,1,5.0
+Frozen DAgger,confirmation,15,1,15.0
+Frozen DAgger,grouped,15,1,15.0
+Frozen DAgger,nominal,3,1,3.0
+Frozen DAgger,original,5,1,5.0
+Frozen GAIL–BC,confirmation,15,1,15.0
+Frozen GAIL–BC,grouped,15,1,15.0
+Frozen GAIL–BC,nominal,3,1,3.0
+Frozen GAIL–BC,original,5,1,5.0
+Frozen GAIL–DAgger,confirmation,15,1,15.0
+Frozen GAIL–DAgger,grouped,15,1,15.0
+Frozen GAIL–DAgger,nominal,3,1,3.0
+Frozen GAIL–DAgger,original,5,1,5.0
+Oracle,confirmation,15,1,15.0
+Oracle,grouped,15,1,15.0
+Oracle,nominal,3,1,3.0
+Oracle,original,5,1,5.0
+Original random-start GAIL,confirmation,15,1,15.0
+Original random-start GAIL,grouped,15,1,15.0
+Original random-start GAIL,nominal,3,1,3.0
+Original random-start GAIL,original,5,1,5.0
+Scratch hidden BC,confirmation,45,3,45.0
+Scratch hidden BC,grouped,45,3,45.0
+Scratch hidden BC,nominal,9,3,9.0
+Scratch hidden DAgger,confirmation,45,3,45.0
+Scratch hidden DAgger,grouped,45,3,45.0
+Scratch hidden DAgger,nominal,9,3,9.0
+Scratch hidden GAIL–BC,confirmation,45,3,45.0
+Scratch hidden GAIL–BC,grouped,45,3,45.0
+Scratch hidden GAIL–BC,nominal,9,3,9.0
+Scratch hidden GAIL–DAgger,confirmation,45,3,45.0
+Scratch hidden GAIL–DAgger,grouped,45,3,45.0
+Scratch hidden GAIL–DAgger,nominal,9,3,9.0
+Scratch hidden Random-start GAIL,confirmation,45,3,45.0
+Scratch hidden Random-start GAIL,grouped,45,3,45.0
+Scratch hidden Random-start GAIL,nominal,9,3,9.0
+Scratch input BC,confirmation,45,3,45.0
+Scratch input BC,grouped,45,3,45.0
+Scratch input BC,nominal,9,3,9.0
+Scratch input DAgger,confirmation,45,3,45.0
+Scratch input DAgger,grouped,45,3,45.0
+Scratch input DAgger,nominal,9,3,9.0
+Scratch input GAIL–BC,confirmation,45,3,45.0
+Scratch input GAIL–BC,grouped,45,3,45.0
+Scratch input GAIL–BC,nominal,9,3,9.0
+Scratch input GAIL–DAgger,confirmation,45,3,45.0
+Scratch input GAIL–DAgger,grouped,45,3,45.0
+Scratch input GAIL–DAgger,nominal,9,3,9.0
+Scratch200 hidden BC,confirmation,45,3,45.0
+Scratch200 hidden BC,grouped,45,3,45.0
+Scratch200 hidden BC,nominal,9,3,9.0
+Scratch200 input BC,confirmation,45,3,45.0
+Scratch200 input BC,grouped,45,3,45.0
+Scratch200 input BC,nominal,9,3,9.0
+Uniform random,confirmation,15,1,15.0
+Uniform random,grouped,15,1,15.0
+Uniform random,nominal,3,1,3.0
+Uniform random,original,5,1,5.0
+Zero native,confirmation,15,1,15.0
+Zero native,grouped,15,1,15.0
+Zero native,nominal,3,1,3.0
+Zero native,original,5,1,5.0

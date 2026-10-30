@@ -1,5 +1,116 @@
 # Session handoff
 
+## Latest — convergence results, probes and EDA complete, 2026-10-30
+
+User: run finished; autonomously run probes/EDA then commit changes. Completed
+all work; commit identity should be read from git log (no push requested).
+Batch experiments/convergence_controls/all_v1 has26trained extensions,3untrained
+network controls and982new60s deployments; all fits hit validation patience, none
+the1000epoch cap. Verified29model receipts,982deployment receipts and summary.
+No new policy training or simulator run was launched during this analysis.
+
+New reproducible analysis: evaluation/convergence_2026-10-30/REPORT.md and
+EDA_FIGURES.pdf (11pages), figure PNG/vector PDFs, CSV tables and manifest.
+Standalone probe.py reuses existing consolidated_probing primitives without
+changing fingerprinted training/evaluation packages. Commands in README/PIPELINES.
+Raw fitted probes: experiments/representation_probing/convergence_all_v1/.
+56checkpoints (29new+26exact initializers+original100epochBC),131representations,
+524multitarget fits,30targets,10/5/15oracle-run split. Both layers, expert,
+raw/context/restricted inputs, random architectures and3shuffles all included.
+New EDA covers3,205deduplicated deployments; previous EDA remains preserved.
+
+Key findings: original extended BC held-outMSE.006561/onpolicy.002116 vsDAgger
+.005401/.001943, BUT performedlineageupdates288855 vs480375. Both reached declared
+stopping rule, not proven full/online convergence. Earlier matched-updateBCwin
+still valid. ContinuedhiddenBC variedMSE.019949→.001889 vsDAgger.001821: large
+previousgap mostly narrows. ScratchhiddenBC improvesMSE.042104→.002635 but
+progress33.015→32.746m/min,falls1→7/90min. No general fidelity→control guarantee.
+Originalextendedmodels sampled0falls/30mineach. Randomnetworks sampledprogress
+−.159/−.637/−.274m/min, nearzero; lowfalls/jerk do not imply usefulwalking.
+
+New repeatability evidence: continuedDAgger hidden43 andinput44 selectepoch0;
+weights explicitly tensor-identical to initializers, yet same-round progress delta
+SD.779/.882m,falls2→1 and2→3/30min. Not a universalnoise estimate. Bootstrap
+intervals condition onobserved checkpoints/design, not trainingpopulation.
+
+Probe caution strengthened: originalDAgger h1phase×rollR².7121→.6939 while
+actionfidelityimproves; extendedBC.7132. MeanwithinrunCKA BCtoinitializer
+.9976/.9944,DAgger.9917/.9856 despite largeMSEgains. Failedrandomnetworks decode
+commandsR²~.97/futureoraclevelocity~.61. Probes are accessibility onoraclestates,
+not causalcontrolskill orR1transfer. Full30targetscore tables retained.
+
+Immediate next research task: integrate selected results into paper/slides after
+review; neither was rewritten. Keep fixed-update and validation-stopped comparisons
+distinct. Localization40ms/20mstracking caveat remains; do not silently change old
+metrics. Allpreviousreports preserved; no meetingsummary edit/archive needed.
+
+## Latest — convergence pipeline ready, 2026-10-29
+
+User requested a copy of the existing pipeline for BC/DAgger convergence and an
+engine sanity control, then expanded scope to varied continued/scratch models.
+Clarification: engine receives outputs of randomly initialized untrained models
+on normal observations. Implemented convergence_controls (copy/adaptation of
+submission_controls; originals unchanged, COPY_PROVENANCE.json hashes) and launcher.
+
+Commands: ./run_convergence_controls.sh run --domain all (combined26fits),
+default run (2originalfits), --domain varied (24variedfits). Varied=BC/DAgger ×
+continued/scratch × hidden/input × seeds42/43/44. Scratch BC starts at the latest
+200-epoch selected control; other fits use existing selected policy+optimizer.
+All use saved170k training/10kvalidation; DAgger aggregates stay fixed, no newrollouts.
+Epoch0 remains selectable. Adam1e-4,batch256,patience25,min_delta1e-5,min25additional
+epochs,cap1000additional; report cap versus patience distinctly. Historical performed
+budgets and selected-final-fit costs remain explicit; this is not equal additional
+compute or proof of online DAgger convergence.
+
+Three random-weight63→256→256→16 networks (42/43/44) retain normal gait/IK/filter/reset.
+`engine --domain all` can run first and its receipts are reused by `run/evaluate`
+in the same batch. Owned servers; no manual server. Original/randomnetwork models
+evaluate38priorrounds, varied33; original190newdeployments,varied906,all982.
+Historical oracle/random/zero/matchedBC and exact varied initializers are verified
+and reused. Scope outputs experiments/convergence_controls/{v1,varied_v1,all_v1};
+smoke_<domain>_v1 separate. Keep scope/settings consistent; use newoutput on changes.
+
+Validation: offline unit suite, full26job historical dependency audit, and ten tiny
+real-checkpoint all-domain training fits passed (CPU in this tool environment).
+No live simulation or full training run was launched. User's next step is optional
+`./run_convergence_controls.sh run --domain all --quick`, then full all-domain run.
+Report paths evaluation/summary_all/comparison.md and summary_engine/comparison.md
+under the selected batch. Existing EDA tracking caveat remains; historical evaluator,
+paper/slides and metrics unchanged. Documentation in convergence_controls/README.md.
+
+## Latest — broad exploratory analysis, 2026-10-29
+
+User requested broad EDA aligned with the proposal, beyond existing hypotheses,
+with useful graphs and variability measures only where meaningful. Completed
+`evaluation/exploratory_2026-10-29/REPORT.md`, a 12-page `EDA_FIGURES.pdf`, PNG/vector
+figures, reproducible `analyze.py`, CSVs and provenance manifest. No new training,
+simulation, probe fits, checkpoint selection, paper or slide changes.
+
+Merged compatible consolidated/scratch/submission reports: 2,223 unique 60-second
+deployments, 66 controllers, 37.05 active hours; verified/deduplicated 1,568 repeated
+records. Audited 294 traces from eight selected controllers. Balanced walking
+panel: 59 controllers × 30 sampled rounds; shared rounds explain 99.48% of progress
+sum of squares (surface AND task, not causal slip attribution). Pooled progress–jerk
+Spearman .904 becomes .022 after round centering. Matched BC improves observed
+oracle-relative lower tails; continued BC has better fidelity but slightly lower
+sampled progress than varied-only BC. Small context/GAIL progress effects remain
+unresolved; intervals condition on existing checkpoints, not new training seeds.
+
+IMPORTANT NEW METRIC CAVEAT: 20 ms evaluation differences use visual head-position
+localization refreshed at 40 ms. Original oracle traces have 50% exactly zero speed
+records; evaluator assigns direction error 1 on these stale frames. Thus apparent
+50% immobility is false, and absolute tracking errors contain a sampling penalty.
+Separate 40 ms diagnostic (not replacement): original oracle direction .65712 ->
+.31468. Historical metrics untouched. Future-direction probe labels inherit the
+legacy tracking convention. See REPORT section 8 and CHALLENGES. Immediate next
+research task is review of this EDA and a versioned localization-aware tracking
+audit if proceeding; do not silently replace published metrics or double velocity.
+Existing convergence and matched-BC probing limitations remain unresolved.
+
+Publication state from the preceding turn: commit e9fbb44 exists; HTTPS push failed
+for missing credentials, so do not infer successful publication. User can push
+from an authenticated terminal. This EDA is subsequent uncommitted work.
+
 ## Latest — publication snapshot, 2026-10-29
 
 User authorized committing and pushing the source/documentation snapshot to

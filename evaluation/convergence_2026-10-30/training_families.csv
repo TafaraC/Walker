@@ -1,0 +1,11 @@
+domain,cohort,architecture,algorithm,replicas,additional_epochs_mean,minimum_epochs,maximum_epochs,lineage_updates_mean,validation_reduction_pct
+original,original,hidden,bc,1,117.0,117,117,288855.0,48.80088320882653
+original,original,hidden,dagger_mixed,1,405.0,405,405,480375.0,77.89248639339144
+varied,continued,hidden,bc,3,313.0,217,374,341145.0,90.45550065697932
+varied,continued,hidden,dagger_mixed,3,34.333333333333336,25,53,444931.6666666667,2.0735810931893437
+varied,continued,input,bc,3,377.6666666666667,311,448,384148.3333333333,91.46376016709694
+varied,continued,input,dagger_mixed,3,46.666666666666664,25,70,453133.3333333333,4.769038229334281
+varied,scratch,hidden,bc,3,317.6666666666667,265,385,344248.3333333333,93.59035058546756
+varied,scratch,hidden,dagger_mixed,3,262.3333333333333,258,271,385501.6666666667,75.51194472683143
+varied,scratch,input,bc,3,323.0,317,332,347795.0,92.94198911952905
+varied,scratch,input,dagger_mixed,3,310.0,283,359,417200.0,75.17543171712917

@@ -1,5 +1,95 @@
 # Imitation-Learning Pipelines
 
+## Completed convergence batch: probes and EDA — 2026-10-30
+
+All26 combined fits reached validation patience, and982 new deployments completed.
+The analysis is isolated from source-fingerprinted training/evaluation packages:
+
+```bash
+/home/pamnt/miniconda3/envs/fcportugal/bin/python evaluation/convergence_2026-10-30/probe.py audit
+/home/pamnt/miniconda3/envs/fcportugal/bin/python evaluation/convergence_2026-10-30/probe.py run
+/home/pamnt/miniconda3/envs/fcportugal/bin/python evaluation/convergence_2026-10-30/analyze.py
+```
+
+The wrapper reuses consolidated_probing's existing dataset, ridge, shuffling,
+expert, CKA and scoring implementations. It verifies all29 model receipts,
+982deployment receipts and summary; probes29new checkpoints,26exact initializers
+and original100-epoch BC. Both layers plus raw/restricted/expert/random controls
+yield131representations and524multitarget fits, each with30candidate properties.
+Same oracle states and10/5/15run split, stride7,horizon10, validation-selected ridge
+penalties and three shuffled-label controls; slip is not a target. Input context
+encoding is unchanged. No simulation or policy training. CPU threads capped at1.
+Raw probe artifacts: experiments/representation_probing/convergence_all_v1/.
+`probe.py report` verifies/reuses fits. Changed plans require a separate output.
+
+EDA merges prior reports and the new batch into3,205unique deployments, checking
+duplicate identities/values. Outputs evaluation/convergence_2026-10-30/REPORT.md,
+11-page EDA_FIGURES.pdf, vector/PNG figures, CSV scores/effects/resources and hashes.
+Stratified paired-round bootstrap conditions on observed checkpoints; it is not
+training-population uncertainty. Selected-epoch-zero models are checked for exact
+tensor equality, supplying two incidental repeatability comparisons. Existing
+localization/direction-error metrics remain unchanged and explicitly qualified.
+No paper/slides or earlier analyses are overwritten. See the local README for
+data requirements and exact output contracts.
+
+## Fixed-dataset convergence and random-network engine controls — 2026-10-29
+
+`./run_convergence_controls.sh plan|audit|train|evaluate|engine|report|run`
+is an isolated copy/adaptation of `submission_controls`; original pipeline files
+are unchanged and their hashes are recorded in `convergence_controls/COPY_PROVENANCE.json`.
+See [convergence_controls/README.md](convergence_controls/README.md) for full contracts.
+
+`--domain original` (default) continues matched BC and final mixed DAgger on their
+original 170k pools; `--domain varied` adds 24 varied fits (BC/DAgger × continued/
+scratch × hidden/input × seeds42/43/44); `--domain all` runs all26. Varied scratch BC
+starts from the completed200-epoch control; other varied fits start from their
+existing selected checkpoints. All restore synchronized Adam states and retain
+existing data/validation splits; no new training rollouts or oracle labels.
+Selection includes inherited epoch0, then minimum validation MSE. Defaultlr1e-4,
+batch256,patience25,min_delta1e-5,minimum25additionalepochs,cap1000additionalepochs.
+Stop reason distinguishes validation patience from cap exhaustion. This tests
+fixed-data fitting, not online DAgger collection convergence. Historical performed
+budgets (including discarded epochs), selected-final-fit costs and new work remain
+explicit; varied lineages are not newly declared compute-matched.
+
+Three untrained63→256→256→16 networks with random weights (seeds42/43/44) take real
+observations and feed native outputs into unchanged gait/filter/IK/reset machinery.
+They are different from both zero outputs and independent per-step uniform noise.
+`engine` evaluates these without waiting for convergence fits; later `evaluate/run`
+shares and skips its completed deployment jobs within the same selected batch.
+
+Evaluation reuses the saved38round schedule (5original,3scalar nominal,30sampled).
+Varied fits retain33surface runs; original fits/random networks have38runs each.
+New deployment totals: original190,varied906,all982. Old references—including each
+varied policy's exact initializer—are audited and reused. `report` is offline;
+outputs comparison JSON/CSV/Markdown, paired differences and validation-curve figures.
+Legacy tracking metric retains the localization-rate caveat documented below.
+
+Default output directories are experiments/convergence_controls/{v1,varied_v1,all_v1}
+for the corresponding domain; `--quick` uses separate smoke_<domain>_v1 directories.
+Owned-server lifecycle, shared simulator lock, immutable identities, completion
+receipts and failed-attempt archives follow the existing architecture. Use the same
+scope/stopping flags at every stage; custom rules require a new output directory.
+
+## Saved-result exploratory analysis and tracking caveat — 2026-10-29
+
+`conda run --no-capture-output -n fcportugal python evaluation/exploratory_2026-10-29/analyze.py`
+reads compatible consolidated/scratch/submission-control reports plus saved traces
+and probe results. It starts no server and changes no evaluator or trained policy.
+Outputs: deduplicated CSVs, source hashes, PNG/vector figures and a 12-page figure
+atlas in `evaluation/exploratory_2026-10-29/`. The reviewed interpretation is in
+[REPORT.md](evaluation/exploratory_2026-10-29/REPORT.md); reproducing it needs the
+ignored experiment artifacts and NumPy/pandas/SciPy/Matplotlib.
+
+The trace audit found that `loc_head_position` is visually refreshed at 40 ms,
+while evaluation records 20 ms steps. Historical unit-vector tracking error
+assigns 1 when displacement is undefined, including stale-position steps. Do not
+interpret per-frame zero displacement as physical stopping or the legacy mean as
+a localization-rate-independent tracking error. Separate 40 ms diagnostics in
+the EDA exclude reset/target-change windows; they are not substituted into prior
+metrics. A future metric correction must be versioned and applied consistently.
+The existing future-direction probe target uses the historical convention too.
+
 ## Submission controls — 2026-10-28
 
 `./run_submission_controls.sh plan|audit|train|evaluate|zero|curves|report|run`
