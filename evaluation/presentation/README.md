@@ -27,14 +27,11 @@ The paper uses six figures; full numerical evidence remains in the reports.
 ```bash
 python3 evaluation/presentation/build_final_figures.py
 python3 evaluation/presentation/render_final_deck.py
-python3 evaluation/paper/build_latex.py
 ```
 
 The PDF renderer is a portable fallback using the same Marp content, not the
 Marp rendering engine. It checks text bounds; representative output pages were
 visually inspected. Add `--preview /tmp/walker_final_deck` to save slide images.
-The [LaTeX paper package](../paper/README.md) includes a buildable source bundle;
-no TeX compiler was installed here, so paper compilation/page count is pending.
 The original 25-slide source and companion are archived under
 `evaluation/meeting_archive/` with suffix `2026-10-26_before_focused_outline_r1.md`.
 Probing slides13–15 now specifically interpret DAgger fidelity, limited GAIL

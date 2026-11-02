@@ -19,7 +19,8 @@ research version of the upstream project.
 
 ## Research entry points
 
-- [Paper draft](evaluation/FINAL_PAPER_DRAFT.md) and [LaTeX package instructions](evaluation/paper/README.md).
+- The final paper will be added to this repository as a PDF.
+- [Paper figure script](evaluation/figures_2026-10-31_paper/README.md), which draws all six paper figures, and the [extended-fitting presentation figures](evaluation/figures_2026-10-30/README.md).
 - [Presentation](evaluation/presentation/CONSOLIDATED_PAPER_SLIDES.pdf) and [slide explanations](evaluation/presentation/CONSOLIDATED_PAPER_NOTES.md).
 - [Findings and numerical results](evaluation/CONSOLIDATED_RESULTS_REPORT_2026-10-15.md) and [optimization controls](evaluation/SUBMISSION_FEEDBACK_RESPONSE_2026-10-28.md).
 - [Exploratory analysis and measurement audit](evaluation/exploratory_2026-10-29/REPORT.md) and [12-figure atlas](evaluation/exploratory_2026-10-29/EDA_FIGURES.pdf).
@@ -28,6 +29,8 @@ research version of the upstream project.
 
 Large datasets, experiment outputs and learned checkpoints are distributed
 separately from source control; artifact download details are pending.
+The older [Markdown paper draft](evaluation/FINAL_PAPER_DRAFT.md) is retained as a historical draft.
+The presentation and October 15 report predate the final extended-fitting analysis.
 
 ![](https://s5.gifyu.com/images/Siov6.gif)
 

@@ -1,5 +1,25 @@
 # Experiment phase ledger
 
+## 2026-11-02 — Repository tidy-up
+
+Added the figure scripts (`evaluation/figures_2026-10-30/`, `evaluation/figures_2026-10-31_paper/`). Removed the marker reading guide and all LaTeX paper sources and snapshots (`evaluation/paper/`, `evaluation/paper_draft_2026-10-31/` and the `paper_before_*` folders in `report_archive/` and `meeting_archive/`); the final paper will be added as a PDF. Entries below describe those folders as they were at the time.
+
+## 2026-10-31 — Wording revision packaged; compilation successful
+
+Revised paper language without new experiments, metric changes or altered source reports. The built-in editor compiler confirmed successful compilation. Delivered a source ZIP with bibliography, referenced figures and revision notes, preserving both prior packages. Final visual review and submission metadata remain outstanding.
+
+
+## 2026-10-31 — Current paper claim review and marker navigation
+
+Experiments are complete; no new training, simulation or probes were run.
+Revised `evaluation/paper_draft_2026-10-31/` and synchronized the OneDrive draft
+and ZIP after archiving both previous packages. Retained the three research
+questions and allocation-based framing, with more precise uncertainty, cost,
+cohort and probe descriptions. Experimental source reports remain preserved.
+Added MARKER_GUIDE and corrected current-paper links in repository navigation.
+Revised PDF compilation with real IEEEtran and submission metadata/artifact
+availability checks remain pending; the pre-review preview is labelled historical.
+
 ## 2026-10-30 — Convergence evaluation and follow-up probes/EDA complete
 
 User completed the combined convergence batch:26validation-stopped extensions,

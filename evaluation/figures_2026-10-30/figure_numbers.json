@@ -1,0 +1,143 @@
+{
+ "fig1": {
+  "BC \u00b7 100 epochs": {
+   "heldout": 0.1104668518066406,
+   "updates": 66500,
+   "gap_mean": -0.0574345588684082,
+   "gap_sd": 0.9317654433782685
+  },
+  "BC \u00b7 matched updates": {
+   "heldout": 0.010240124464035,
+   "updates": 211050,
+   "gap_mean": 0.26605145136515296,
+   "gap_sd": 0.6254125390185563
+  },
+  "BC \u00b7 validation-stopped": {
+   "heldout": 0.0065609482169151,
+   "updates": 288855,
+   "gap_mean": 0.12254769007364945,
+   "gap_sd": 0.6625699891341652
+  },
+  "DAgger \u00b7 7 rounds": {
+   "heldout": 0.0153452248096466,
+   "updates": 211050,
+   "gap_mean": -0.23905477523803592,
+   "gap_sd": 1.0620260304613258
+  },
+  "DAgger \u00b7 validation-stopped": {
+   "heldout": 0.0054007554292678,
+   "updates": 480375,
+   "gap_mean": 0.01599092483520508,
+   "gap_sd": 0.7510326438098992
+  }
+ },
+ "fig2": [
+  {
+   "family": "Continued \u00b7 hidden \u00b7 BC",
+   "mse_init": 0.019948537731170602,
+   "mse_ext": 0.001889433268705933,
+   "progress_change_mean": 0.08676819271511499,
+   "progress_change_sd": 0.36563417050940733,
+   "falls_init": 4,
+   "falls_ext": 5
+  },
+  {
+   "family": "Continued \u00b7 hidden \u00b7 DAgger",
+   "mse_init": 0.0018655313809712332,
+   "mse_ext": 0.0018206675887107334,
+   "progress_change_mean": 0.020119614071315895,
+   "progress_change_sd": 0.320557168800143,
+   "falls_init": 5,
+   "falls_ext": 5
+  },
+  {
+   "family": "Continued \u00b7 input \u00b7 BC",
+   "mse_init": 0.019856724452972364,
+   "mse_ext": 0.0016714208722114002,
+   "progress_change_mean": -0.04816903008355025,
+   "progress_change_sd": 0.47611010640623885,
+   "falls_init": 6,
+   "falls_ext": 4
+  },
+  {
+   "family": "Continued \u00b7 input \u00b7 DAgger",
+   "mse_init": 0.0019019313732782336,
+   "mse_ext": 0.0018050935467083667,
+   "progress_change_mean": -0.07112130059136315,
+   "progress_change_sd": 0.44040084100977755,
+   "falls_init": 8,
+   "falls_ext": 6
+  },
+  {
+   "family": "Varied only \u00b7 hidden \u00b7 BC",
+   "mse_init": 0.04210356922149653,
+   "mse_ext": 0.0026353626767794,
+   "progress_change_mean": -0.2690495279100204,
+   "progress_change_sd": 0.3704058696280135,
+   "falls_init": 1,
+   "falls_ext": 7
+  },
+  {
+   "family": "Varied only \u00b7 hidden \u00b7 DAgger",
+   "mse_init": 0.010345469967524166,
+   "mse_ext": 0.0024542480270067332,
+   "progress_change_mean": 0.03016941282484312,
+   "progress_change_sd": 0.4408915706044211,
+   "falls_init": 4,
+   "falls_ext": 3
+  },
+  {
+   "family": "Varied only \u00b7 input \u00b7 BC",
+   "mse_init": 0.0377456436157226,
+   "mse_ext": 0.0025703343470890668,
+   "progress_change_mean": -0.13217543496025944,
+   "progress_change_sd": 0.3473755440385567,
+   "falls_init": 4,
+   "falls_ext": 3
+  },
+  {
+   "family": "Varied only \u00b7 input \u00b7 DAgger",
+   "mse_init": 0.0098258912722269,
+   "mse_ext": 0.0023128785848617,
+   "progress_change_mean": 0.1384801228841152,
+   "progress_change_sd": 0.8140644892924165,
+   "falls_init": 8,
+   "falls_ext": 3
+  }
+ ],
+ "fig3": {
+  "Oracle (FC Portugal)": {
+   "progress_mean": 32.885211340586345,
+   "falls": 3
+  },
+  "BC \u00b7 validation-stopped": {
+   "progress_mean": 33.00775903065999,
+   "falls": 0
+  },
+  "Zero native action": {
+   "progress_mean": -0.3030762990315755,
+   "falls": 12
+  },
+  "Untrained network \u00b7 seed 42": {
+   "progress_mean": -0.15874504844347637,
+   "falls": 11
+  },
+  "Untrained network \u00b7 seed 43": {
+   "progress_mean": -0.637070898214976,
+   "falls": 6
+  },
+  "Untrained network \u00b7 seed 44": {
+   "progress_mean": -0.2742340882619222,
+   "falls": 12
+  },
+  "Uniform random actions": {
+   "progress_mean": 0.06535657544930777,
+   "falls": 704
+  }
+ },
+ "fig4": {
+  "spearman": -0.18521739130434778,
+  "p": 0.38965,
+  "n": 24
+ }
+}

@@ -173,6 +173,5 @@ must be separated before making algorithm or pretraining claims.
 
 Original reports are preserved. This addendum and updated presentation qualify
 their earlier interpretations. The [revised paper draft](FINAL_PAPER_DRAFT.md)
-now incorporates these controls, with a [LaTeX package](paper/README.md) and
-reusable figures. Compilation and the final eight-body-page layout remain to
-be checked before submission.
+now incorporates these controls. The paper's figures are drawn by the
+[paper figure script](figures_2026-10-31_paper/README.md).

@@ -6,7 +6,8 @@ retained. The original README provides the upstream academic citation.
 
 ## Reading the research
 
-- [Paper draft](evaluation/FINAL_PAPER_DRAFT.md) and [LaTeX sources](evaluation/paper/README.md).
+- The final paper will be added as a PDF. Its figures are drawn by the
+  [paper figure script](evaluation/figures_2026-10-31_paper/README.md).
 - [Presentation PDF](evaluation/presentation/CONSOLIDATED_PAPER_SLIDES.pdf) and
   [explanations](evaluation/presentation/CONSOLIDATED_PAPER_NOTES.md).
 - [Control findings](evaluation/SUBMISSION_FEEDBACK_RESPONSE_2026-10-28.md) and
@@ -15,6 +16,8 @@ retained. The original README provides the upstream academic citation.
   [technical protocols](PIPELINES.md) and [experiment phases](EXPERIMENT_PHASES.md).
 - Earlier documents: `evaluation/report_archive/` and `evaluation/meeting_archive/`.
   Superseded scripts: `archive/legacy_imitation/`.
+  `evaluation/FINAL_PAPER_DRAFT.md` is an older paper version;
+  the presentation also predates the final extended-fitting analysis.
 
 ## What belongs in Git
 
