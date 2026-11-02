@@ -25,7 +25,7 @@ research version of the upstream project.
 - [Findings and numerical results](evaluation/CONSOLIDATED_RESULTS_REPORT_2026-10-15.md) and [optimization controls](evaluation/SUBMISSION_FEEDBACK_RESPONSE_2026-10-28.md).
 - [Exploratory analysis and measurement audit](evaluation/exploratory_2026-10-29/REPORT.md) and [12-figure atlas](evaluation/exploratory_2026-10-29/EDA_FIGURES.pdf).
 - [Extended-fitting results, engine controls and new probes](evaluation/convergence_2026-10-30/REPORT.md) and [11-figure atlas](evaluation/convergence_2026-10-30/EDA_FIGURES.pdf).
-- [Setup workbook](docs/learning/README.md), [commands](COMMANDS.md) and [repository/artifact guide](REPOSITORY.md).
+- [Setup](#setup) (below), the [setup workbook](docs/learning/README.md), [commands](COMMANDS.md) and [repository/artifact guide](REPOSITORY.md).
 
 Large datasets, experiment outputs and learned checkpoints are distributed
 separately from source control; artifact download details are pending.
@@ -33,6 +33,81 @@ The older [Markdown paper draft](evaluation/FINAL_PAPER_DRAFT.md) is retained as
 The presentation and October 15 report predate the final extended-fitting analysis.
 
 ![](https://s5.gifyu.com/images/Siov6.gif)
+
+## Setup
+
+The code runs on Linux; it was developed on Ubuntu 24.04 and also runs in WSL 2 on Windows. There are two levels of setup: regenerating the paper's figures needs only Python, while running the experiments needs the RoboCup 3D simulator.
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/TafaraC/Walker.git
+cd Walker
+```
+
+### 2. Quick start: regenerate the paper's figures (no simulator)
+
+The evaluation records behind the figures are in `evaluation/paper_inputs/`, so this works on a fresh clone:
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+pip install numpy pandas matplotlib
+python evaluation/figures_2026-10-31_paper/make_paper_figures.py --out paper_figures
+```
+
+The six figures are written to `paper_figures/`. See the [figure script README](evaluation/figures_2026-10-31_paper/README.md) for details.
+
+### 3. Full setup: run the experiments
+
+**System packages.** Install a compiler, Git and Conda (or Miniconda):
+
+```bash
+sudo apt update
+sudo apt install build-essential git
+```
+
+**Simulator.** Install SimSpark and the RoboCup 3D server `rcssserver3d` following the official [SimSpark instructions](https://gitlab.com/robocup-sim/SimSpark). The paper used SimSpark 0.3.8 and rcssserver3d 0.7.9, installed under `/usr/share/rcssserver3d` (the path the managed launchers expect). To watch the robot, also install the [RoboViz](https://github.com/magmaOffenburg/RoboViz) viewer (requires Java); it is optional for running experiments.
+
+**Simulator settings.** The experiments need synchronous, non-real-time simulation. Set these two lines (Ruby syntax) and restart any running server:
+
+```ruby
+$agentSyncMode = true          # in ~/.simspark/spark.rb
+$enableRealTimeMode = false    # in rcssserver3d.rb (e.g. /usr/share/rcssserver3d/rcssserver3d.rb)
+```
+
+**Python environment.** Create a Python 3.9 environment and install the dependencies. For a GPU, install the matching PyTorch build from [pytorch.org](https://pytorch.org) before the last command.
+
+```bash
+conda create -n walker python=3.9
+conda activate walker
+pip install -r requirements.txt
+```
+
+The launchers (`run_*.sh`) use the Python in `PYTHON_BIN`. Point it at this environment (add the line to `~/.bashrc` to keep it):
+
+```bash
+export PYTHON_BIN="$(command -v python3)"
+```
+
+**Build and check.** Build the C++ modules, then check the imports and the simulator settings:
+
+```bash
+python -c "from scripts.commons.Script import Script; Script.build_cpp_modules()"
+python -c "from agent.Base_Agent import Base_Agent; print('agent imports OK')"
+python check_simulator_config.py
+```
+
+**First run.** A small smoke run trains and evaluates tiny models end to end. The launchers start and stop their own simulator, so leave ports 3100 and 3200 free and do not start `rcssserver3d` yourself:
+
+```bash
+./run_training.sh run --quick --output experiments/learning/smoke_01
+./run_evaluation_all.sh run --quick --output experiments/learning/smoke_01
+```
+
+A smoke run checks that everything works; its tiny budgets do not reproduce the paper's results. Datasets, checkpoints and full experiment outputs are not in Git (see [REPOSITORY.md](REPOSITORY.md)), so commands that need the completed study's models will not run on a fresh clone.
+
+**Next steps.** [COMMANDS.md](COMMANDS.md) lists the training, evaluation and viewer commands (written for the original machine: replace `/home/pamnt/...` paths and the `fcportugal` environment name with your own). [PIPELINES.md](PIPELINES.md) describes each pipeline, and the [setup workbook](docs/learning/README.md) explains the environment, simulator settings and common problems in depth.
 
 ## About the upstream FC Portugal codebase
 

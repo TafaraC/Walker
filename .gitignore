@@ -2,6 +2,7 @@
 __pycache__/
 *.py[cod]
 .venv/
+/paper_figures/
 venv/
 env/
 .conda/

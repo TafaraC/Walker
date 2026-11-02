@@ -1,0 +1,14 @@
+# Python dependencies for the Walker research code (Python 3.9).
+# Versions are those of the environment used for the paper (Ubuntu 24.04);
+# packages without a version were not recorded and use the current release.
+numpy==1.26.4
+scipy==1.13.1
+matplotlib==3.9.4
+pandas
+psutil
+pybind11==3.0.4        # builds the C++ modules in cpp/
+torch==2.8.0           # CPU build by default; see https://pytorch.org for a CUDA build
+
+# Only needed for the upstream FC Portugal Gym training tools (scripts/gyms/):
+# gym
+# stable-baselines3
