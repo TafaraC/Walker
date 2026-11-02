@@ -3,9 +3,12 @@
 # Each run starts the simulator, waits for Enter (start recording, then press Enter),
 # walks for 30 active seconds and shuts down before the next one starts.
 #
-# Usage: ./record_demos.sh [--list] [--from N]
-#   --list    print the numbered clip plan and exit
-#   --from N  start at clip N (to redo or continue after stopping)
+# Usage: ./record_demos.sh [--list] [--from N] [--auto [SECONDS]]
+#   --list            print the numbered clip plan and exit
+#   --from N          start at clip N (to redo or continue after stopping)
+#   --auto [SECONDS]  run unattended: each clip starts walking SECONDS (default 15) after its
+#                     simulator is up, instead of waiting for Enter; leave RoboViz and the screen
+#                     recorder running, and RoboViz reconnects to each new simulator by itself
 # Environment: SEED (default 101) sets the targets, the same for every clip;
 #              ALTERED_SLIP (default 10) is the fixed slip for the altered-surface clips.
 # Output: everything shown in the console is also saved to logs/demos/<time>/console.log,
@@ -34,10 +37,13 @@ CLIPS=(
 
 FROM=1
 LIST=0
+START_DELAY=""
 while [ $# -gt 0 ]; do
   case "$1" in
     --list) LIST=1 ;;
     --from) FROM="$2"; shift ;;
+    --auto)
+      if [[ "${2:-}" =~ ^[0-9]+([.][0-9]+)?$ ]]; then START_DELAY="$2"; shift; else START_DELAY=15; fi ;;
     *) echo "Unknown option: $1" >&2; exit 2 ;;
   esac
   shift
@@ -68,7 +74,8 @@ mkdir -p "$RUN_DIR"
 SUMMARY="$RUN_DIR/clips.tsv"
 printf 'clip\ttitle\tmodel\tslip\tseed\tstarted\tfinished\tstatus\ttargets\tfalls\tviewer_log\n' > "$SUMMARY"
 exec > >(tee -a "$RUN_DIR/console.log") 2>&1
-echo "Recording session: $RUN_DIR (seed ${SEED}, altered slip ${ALTERED_SLIP}, git $(git rev-parse --short HEAD 2>/dev/null || echo unknown))"
+if [ -n "$START_DELAY" ]; then START_MODE="automatic after ${START_DELAY} s"; else START_MODE="on Enter"; fi
+echo "Recording session: $RUN_DIR (seed ${SEED}, altered slip ${ALTERED_SLIP}, start ${START_MODE}, git $(git rev-parse --short HEAD 2>/dev/null || echo unknown))"
 
 failed=()
 for i in "${!CLIPS[@]}"; do
@@ -79,7 +86,7 @@ for i in "${!CLIPS[@]}"; do
   echo "=== Clip ${n}/${#CLIPS[@]}: ${title} (seed ${SEED}, slip ${slip}) ==="
   started="$(date '+%Y-%m-%d %H:%M:%S')"
   clip_log="$RUN_DIR/clip_$(printf '%02d' "$n").log"
-  if ./run_viewer.sh --model "$label" --slip "$slip" --seed "$SEED" 2>&1 | tee "$clip_log"; then
+  if ./run_viewer.sh --model "$label" --slip "$slip" --seed "$SEED" ${START_DELAY:+--start-delay "$START_DELAY"} 2>&1 | tee "$clip_log"; then
     status=ok
   else
     status=failed

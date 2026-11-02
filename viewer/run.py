@@ -8,6 +8,7 @@ import signal
 import subprocess
 import sys
 import tempfile
+import time
 
 ROOT = Path(__file__).resolve().parents[1]
 CONVERGENCE_ROOT = ROOT / 'experiments/convergence_controls/all_v1'
@@ -95,6 +96,9 @@ def main():
     parser.add_argument('--slip', help='Non-negative scalar slip, or original; omit to select')
     parser.add_argument('--seed', type=int, default=101)
     parser.add_argument('--list', action='store_true', help='List available models without starting a server')
+    parser.add_argument('--start-delay', type=float, metavar='SECONDS',
+                        help='Start walking automatically this many seconds after the simulator is up, '
+                             'instead of waiting for Enter (for unattended recording)')
     args = parser.parse_args()
     os.chdir(ROOT)
     options = choices(args.root.resolve(), args.convergence_root.resolve(),
@@ -133,7 +137,12 @@ def main():
         directory = Path(tempfile.mkdtemp(prefix='demo_', dir=logs))
         print(f'[Viewer] Logs: {directory}')
         with simulator(directory, slip):
-            input('Open/reconnect RoboViz to localhost:3200, then press Enter to walk (30 seconds)... ')
+            if args.start_delay is None:
+                input('Open/reconnect RoboViz to localhost:3200, then press Enter to walk (30 seconds)... ')
+            else:
+                print(f'[Viewer] Simulator ready; RoboViz can reconnect to localhost:3200. '
+                      f'Walking starts in {args.start_delay:g} s.', flush=True)
+                time.sleep(max(0.0, args.start_delay))
             run_demo(selected[:3], args.seed, architecture=selected[3], slip=slip)
 
 
