@@ -6,7 +6,7 @@ retained. The original README provides the upstream academic citation.
 
 ## Reading the research
 
-- The final paper will be added as a PDF. Its figures are drawn by the
+- [Research report (PDF)](Behavioural_Cloning_DAgger_GAIL_RoboCup_Walking.pdf). Its figures are drawn by the
   [paper figure script](evaluation/figures_2026-10-31_paper/README.md).
 - [Presentation PDF](evaluation/presentation/CONSOLIDATED_PAPER_SLIDES.pdf) and
   [explanations](evaluation/presentation/CONSOLIDATED_PAPER_NOTES.md).

@@ -26,7 +26,7 @@ research version of the upstream project.
 
 ## Research entry points
 
-- The final paper will be added to this repository as a PDF.
+- [Research report (PDF)](Behavioural_Cloning_DAgger_GAIL_RoboCup_Walking.pdf): *Behavioural Cloning, DAgger and GAIL for RoboCup Walking: Comparisons Across Training Resource Allocations*, T. Chibanda, B. Ingram and P. Ranchod, University of the Witwatersrand, 2026.
 - [Paper figure script](evaluation/figures_2026-10-31_paper/README.md), which draws all six paper figures, and the [extended-fitting presentation figures](evaluation/figures_2026-10-30/README.md).
 - [Presentation](evaluation/presentation/CONSOLIDATED_PAPER_SLIDES.pdf) and [slide explanations](evaluation/presentation/CONSOLIDATED_PAPER_NOTES.md).
 - [Findings and numerical results](evaluation/CONSOLIDATED_RESULTS_REPORT_2026-10-15.md) and [optimization controls](evaluation/SUBMISSION_FEEDBACK_RESPONSE_2026-10-28.md).
