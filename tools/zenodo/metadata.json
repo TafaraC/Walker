@@ -3,8 +3,10 @@
     "upload_type": "dataset",
     "title": "Walker: research data and checkpoints for comparing behavioural cloning, DAgger and GAIL in RoboCup 3D walking",
     "creators": [
-      {"name": "Chibanda, Tafara", "affiliation": "University of the Witwatersrand"}
-    ],
+  {"name": "Chibanda, Tafara", "affiliation": "University of the Witwatersrand"},
+  {"name": "Ingram, Branden", "affiliation": "University of the Witwatersrand"},
+  {"name": "Ranchod, Pravesh", "affiliation": "University of the Witwatersrand"}
+],
     "description": "<p>Experiment outputs, evaluation records and traces, datasets, model checkpoints and development backups for the Walker project, which compares behavioural cloning (BC), DAgger and generative adversarial imitation learning (GAIL) for simulated NAO walking in the RoboCup 3D Soccer Simulation League, imitating the FC Portugal walking controller through its gait interface.</p><p>The archives keep repository-relative paths: extract them in the root of a clone of the code repository (https://github.com/TafaraC/Walker). README.md describes the contents, MANIFEST.tsv lists every file, and SHA256SUMS gives the archive checksums.</p>",
     "access_right": "open",
     "license": "cc-by-4.0",

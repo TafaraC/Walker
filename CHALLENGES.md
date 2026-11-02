@@ -1,5 +1,20 @@
 # Imitation-Learning Challenges and Engineering Decisions
 
+## 2026-10-31: Scientific wording and compilation follow-up
+
+The paper now restricts mechanistic explanations to untested interpretations: architecture size does not establish realizability, and fall counts/action-error ratios do not establish recovery to the expert distribution. Context and GAIL claims are limited to the tested configurations and measured outcomes. Numerical results and source reports remain unchanged. The built-in editor compiler successfully compiled the revised saved source; the earlier missing terminal compiler is no longer a compilation blocker. Final visual layout review remains pending.
+
+
+## 2026-10-31: Viewer discovery did not cover convergence artifacts — resolved
+
+The viewer discovered consolidated policies/*/final.json but convergence jobs use
+training/<label>/policy.pth plus completion receipts. Added separate discovery with
+explicit `convergence/` labels, recorded architecture and checkpoint/job hash checks.
+Only completed selected checkpoints are shown; last-epoch snapshots are not used.
+Existing choices remain, and --convergence-root selects alternative batches.
+The 26 new fits and three random-network controls can now be viewed without copying
+or renaming checkpoints. Input-conditioned policies still require numeric slip.
+
 ## 2026-10-30: Stopping rules, repeated deployment and probes qualify the ranking
 
 Completed26 fixed-data extensions all reached declared validation patience.

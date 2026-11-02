@@ -427,13 +427,25 @@ server/port problem is resolved.
 ./run_viewer.sh --root experiments/consolidated/smoke_v1
 ./run_viewer.sh --list
 ./run_viewer.sh --model varied/input/seed_42/bc --slip 1
+# New validation-selected models and fixed random-network controls:
+./run_viewer.sh --model convergence/bc_original_convergence --slip original
+./run_viewer.sh --model convergence/bc_varied_scratch_input_42_convergence --slip 1
+./run_viewer.sh --model convergence/engine_random_network_42 --slip original
+# Optional alternative convergence batch:
+./run_viewer.sh --convergence-root experiments/convergence_controls/varied_v1 --list
 ```
 
 This viewer starts its own server; open RoboViz separately, connect to
 localhost:3200, then press Enter in the launcher. Do not start rcssserver3d
 manually or run this alongside training/evaluation. Choose `original` to preserve
 the original scene, or a numeric fixed slip. Context models require numeric slip.
-Only existing historical checkpoints and completed consolidated models are listed.
+Existing historical and consolidated models remain available. Completed models in
+experiments/convergence_controls/all_v1/training are appended as `convergence/<label>`:
+26validation-selected BC/DAgger checkpoints and3untrained random networks in the
+current batch. The viewer checks checkpoint/metadata hashes against completion
+receipts, skips incomplete jobs, and uses selected policy.pth rather than the last
+training epoch. `--root` selects consolidated models; `--convergence-root` selects
+the additional convergence batch. Neither option starts training or evaluation.
 
 # Probe the completed consolidated models
 

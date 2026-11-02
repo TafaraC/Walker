@@ -1,5 +1,55 @@
 # Session handoff
 
+## Latest — scientific wording revision and successful compilation, 2026-10-31
+
+Revised the open OneDrive `paper_draft_2026-10-31/main.tex` in place for evidence-backed scientific wording, then synchronized the repository copy. The built-in `compile_latex_document` tool returned success for the saved OneDrive source. Earlier terminal-compiler limitations no longer block compilation. No standalone PDF was exported; visual layout review remains pending.
+
+Delivered `paper_draft_2026-10-31_wording_review.zip` in OneDrive Walker and refreshed the conventional draft ZIP. Includes source, bibliography, six referenced PDF figures, README and revision notes; excludes old previews. Prior packages archived as `paper_before_wording_review_2026-10-31_r1`. No experiments or runtime code changed. Next: final visual layout and submission metadata/resource/bibliography checks.
+
+
+## Latest — reviewed paper and marker navigation, 2026-10-31
+
+User requested current-paper revision followed by repository readability review.
+Updated `evaluation/paper_draft_2026-10-31/main.tex` and README; synchronized
+OneDrive `Research/Walker/paper_draft_2026-10-31/` and rebuilt its ZIP. Both complete
+previous packages are archived under `paper_before_claim_review_2026-10-31_r1`
+in repository `evaluation/report_archive/` and OneDrive `archive/` respectively.
+
+Preserved the three RQs and resource-allocation argument. Tightened descriptive
+expert closeness, conditional uncertainty, mixed-rollout labels, inherited GAIL
+costs, cohort accounting and probe interpretation; removed universal 0.2 m rule.
+No changes to experimental results, pipeline code, planning document or meeting brief.
+README/REPOSITORY now identify the current paper; MARKER_GUIDE provides a claim-to-
+evidence/code map and distinguishes historical documents and missing external data.
+
+Immediate next task: compile the revised source with real IEEEtran and visually
+review it, then finalize submission metadata, bibliography/resource checks and
+external artifact links. No native TeX compiler was found; WSL access was denied.
+`PRE_REVISION_preview.pdf` is the old approximate rendering, not the revised paper.
+Experiments are finished. Existing unrelated working-tree changes remain untouched.
+
+## Latest — paper draft, 2026-10-31
+
+A new, hand-written paper draft is in `evaluation/paper_draft_2026-10-31/` (IEEE conference class, author–year
+citations). It follows the claims plan in OneDrive `paper_planning/CLAIMS_AND_RQS.md` and the 30 October convergence results.
+It does not cite the proposal; RQs are motivated from the literature. `evaluation/paper/` is unchanged, and
+`build_latex.py` does not touch the new folder. `main_preview.pdf` uses a stand-in class, so its layout is approximate.
+A copy is in OneDrive `paper_draft_2026-10-31/`. Open items are listed in that folder's README.
+
+## Latest — presentation figures for the convergence batch, 2026-10-30
+
+Clean, consistently styled figures for the extended-fitting results:
+evaluation/figures_2026-10-30/ (README, make_figures.py, figures/01–04 PNG+PDF,
+figure_numbers.json, varied_family_changes.csv, damping_pairs.csv, reduce_traces.py).
+01 original allocation curve + sampled paired progress; 02 varied families
+initializer→validation-stopped MSE + paired progress change; 03 engine control;
+04 supplementary damping check. Damping hypothesis (losing action damping explains
+small progress losses) NOT supported: Spearman −0.19, permutation p≈0.39, 24 pairs;
+initializers already near-undamped (SD ratio ≈0.99), limited range. Traces reduced
+for 1,580 runs (26 extensions + exact initializers); table kept outside Git at
+artifacts/convergence_damping/. Copies of figures in user's OneDrive submission folder.
+No training, simulation, probe fitting or checkpoint selection. Existing reports unchanged.
+
 ## Latest — convergence results, probes and EDA complete, 2026-10-30
 
 User: run finished; autonomously run probes/EDA then commit changes. Completed
