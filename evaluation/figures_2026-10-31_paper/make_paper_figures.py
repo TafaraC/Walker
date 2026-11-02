@@ -124,7 +124,7 @@ for (lab, l, c, u), yy in zip(ORIG, [*by, y[-1], ye]):
     ax.annotate(f'{txt}\n{yy:.4f}', (u / 1e3, yy), xytext=off, textcoords='offset points', fontsize=6.2, color=c, linespacing=1.05)
 ax.axvline(211.05, color=MUTED, ls=':', lw=.7); ax.text(216, 2.9e-3, '211,050 updates', fontsize=6, color=MUTED, va='bottom')
 ax.set_yscale('log'); ax.set_ylim(2.6e-3, .3); ax.set_xlim(0, 540)
-ax.set_xlabel('Optimizer updates performed (thousands)'); ax.set_ylabel('Held-out action MSE (log)')
+ax.set_xlabel('Optimiser updates performed (thousands)'); ax.set_ylabel('Held-out action MSE (log)')
 ax.set_title('(a) Held-out action error'); ax.legend(frameon=False, loc='upper right', handlelength=1.6); grid(ax, 'both')
 ax = axs[1]
 expert = per_round('oracle').return_target_progress_m
