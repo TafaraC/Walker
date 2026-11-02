@@ -28,8 +28,10 @@ and credentials. Upstream `.pkl` skill models remain tracked because the oracle
 requires them. Tests and `.github/` configuration are eligible for tracking.
 Ignoring files leaves them on disk and does not remove already tracked files.
 
-A source clone lacks the datasets/checkpoints required to resume full experiments
-or regenerate result figures. Those commands require the documented parent
+A source clone lacks the datasets/checkpoints required to resume full experiments.
+The paper's six figures can be regenerated from a clone: `evaluation/paper_inputs/`
+holds checksummed copies of the evaluation records they need (see the
+[paper figure script](evaluation/figures_2026-10-31_paper/README.md)). Resuming experiments requires the documented parent
 artifacts. Add their download location and checksums when the data are prepared
 for sharing. The workbook describes a small consolidated smoke experiment for
 starting a fresh run. Historical absolute paths are provenance, not download links.

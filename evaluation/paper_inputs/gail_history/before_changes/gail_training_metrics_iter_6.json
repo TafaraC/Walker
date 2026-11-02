@@ -1,0 +1,19 @@
+{
+  "algorithm": "gail",
+  "iteration": 6,
+  "seed": 42,
+  "expert_samples": 90000,
+  "rollout_samples": 4000,
+  "discriminator_updates": 48,
+  "discriminator_loss": 0.06363086148242776,
+  "discriminator_expert_accuracy": 0.9968999624252319,
+  "discriminator_policy_accuracy": 0.999000072479248,
+  "learned_reward_mean": 0.008037681691348553,
+  "learned_reward_std": 0.0476115345954895,
+  "actor_loss": 0.2134764924645424,
+  "critic_loss": 2.3455227740108966,
+  "entropy": -6.963014322519302,
+  "approximate_kl": 341.68570131367017,
+  "clip_fraction": 0.9859375,
+  "expert_dataset_actor_mean_mse": 6.280015468597412
+}

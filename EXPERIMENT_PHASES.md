@@ -2,7 +2,7 @@
 
 ## 2026-11-02 — Repository tidy-up
 
-Added the figure scripts (`evaluation/figures_2026-10-30/`, `evaluation/figures_2026-10-31_paper/`). Removed the marker reading guide and all LaTeX paper sources and snapshots (`evaluation/paper/`, `evaluation/paper_draft_2026-10-31/` and the `paper_before_*` folders in `report_archive/` and `meeting_archive/`); the final paper will be added as a PDF. Entries below describe those folders as they were at the time.
+Added the figure scripts (`evaluation/figures_2026-10-30/`, `evaluation/figures_2026-10-31_paper/`). Removed the marker reading guide and all LaTeX paper sources and snapshots (`evaluation/paper/`, `evaluation/paper_draft_2026-10-31/` and the `paper_before_*` folders in `report_archive/` and `meeting_archive/`); the final paper will be added as a PDF. Added `evaluation/paper_inputs/` (about 6 MB of checksummed evaluation records) so the paper figures can be regenerated from a clone; the figure script reads it by default. Entries below describe those folders as they were at the time.
 
 ## 2026-10-31 — Wording revision packaged; compilation successful
 

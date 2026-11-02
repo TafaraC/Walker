@@ -12,8 +12,12 @@ Figures 4-6 are extracted from the archived analysis scripts (kept unchanged in 
   no embedded footnotes, counts instead of Wilson intervals, and Fig 5 reduced to three panels.
 
 Usage (from the repository root):
-  python3 evaluation/figures_2026-10-31_paper/make_paper_figures.py --out <folder> [--legacy <artifacts root>]
-  (--legacy defaults to <repo>/artifacts, the Git-ignored legacy run logs used by Fig 5)
+  python3 evaluation/figures_2026-10-31_paper/make_paper_figures.py --out <folder>
+
+By default the inputs are read from evaluation/paper_inputs/ (tracked; checksums in SHA256SUMS) and
+evaluation/convergence_2026-10-30/, so the figures can be rebuilt from a fresh clone. With
+--from-experiments the script reads the same files from their original, Git-ignored locations under
+experiments/ and artifacts/ (--legacy <folder> overrides artifacts/ for the GAIL logs).
 """
 import argparse, json, os, re
 from pathlib import Path
@@ -29,9 +33,23 @@ HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[1]
 CONV = ROOT / 'evaluation/convergence_2026-10-30'
 ap = argparse.ArgumentParser(); ap.add_argument('--out', default=str(HERE / 'figures')); ap.add_argument('--legacy', default=None)
+ap.add_argument('--inputs', default=str(HERE.parent / 'paper_inputs')); ap.add_argument('--from-experiments', action='store_true')
 ARGS = ap.parse_args()
 OUT = Path(ARGS.out); OUT.mkdir(parents=True, exist_ok=True)
 LEG = Path(ARGS.legacy) if ARGS.legacy else ROOT / 'artifacts'
+INP = Path(ARGS.inputs)
+if ARGS.from_experiments:   # original locations (not in Git)
+    X = ROOT / 'experiments'
+    P_CURVES = X / 'submission_controls/v1/curves/curves.json'
+    P_SCRATCH = X / 'consolidated/v1/scratch_v1/evaluation/all_all_correct/comparison.json'
+    P_CONTROLS = X / 'submission_controls/v1/evaluation/summary/comparison.json'
+    P_GAIL = [X / 'archive_20260905_pre_variants/legacy_gail_backups/gail_backup_20260905-022910',
+              X / 'archive_20260905_pre_variants/gail_dagger/artifacts', LEG / 'gail_bc', LEG / 'gail_random']
+else:                       # tracked copies in evaluation/paper_inputs/
+    P_CURVES = INP / 'submission_controls/curves.json'
+    P_SCRATCH = INP / 'consolidated_scratch/comparison.json'
+    P_CONTROLS = INP / 'submission_controls/comparison.json'
+    P_GAIL = [INP / 'gail_history' / d for d in ('before_changes', 'after_dagger_init', 'after_bc_init', 'after_random_init')]
 
 W = 7.16  # IEEE \textwidth in inches
 WC = 3.5  # IEEE \columnwidth in inches (Figures 3-5, 1 November 2026 page-limit revision)
@@ -79,7 +97,7 @@ def per_round(label):
     return S[S.label == label].set_index('round').sort_index()
 
 # ---------------------------------------------------------------- Figure 1
-curves = json.loads((ROOT / 'experiments/submission_controls/v1/curves/curves.json').read_text())['rows']
+curves = json.loads(P_CURVES.read_text())['rows']
 dag = [r for r in curves if r['algorithm'] == 'dagger_mixed']
 upd = TR.set_index('label').total_lineage_gradient_updates
 ORIG = [('BC, initial (100 epochs)', 'original_hidden_42_bc', BLUE, 66500),
@@ -201,8 +219,7 @@ save(fig, 'fig3_engine')
 NUM['fig3'] = {n: dict(progress_mean=float(per_round(l).return_target_progress_m.mean()), falls=f) for (n, l, _), f in zip(ENG, fl)}
 
 # ================================================================ Figures 4 and 6: data from archive/walker_eda.py
-SRC = {'scratch': ROOT / 'experiments/consolidated/v1/scratch_v1/evaluation/all_all_correct/comparison.json',
-       'controls': ROOT / 'experiments/submission_controls/v1/evaluation/summary/comparison.json'}
+SRC = {'scratch': P_SCRATCH, 'controls': P_CONTROLS}
 ED = {k: json.loads(p.read_text()) for k, p in SRC.items()}
 METRICS = ['held_out_expert_action_mse', 'return_target_progress_m', 'mean_forward_velocity_mps',
            'mean_target_direction_error', 'targets_reached', 'falls', 'on_policy_latent_action_mse',
@@ -316,11 +333,10 @@ def it(f):
     return int(re.findall(r'iter(?:ation)?_(\d+)', str(f))[-1])
 
 
-R = ROOT / 'experiments'
-RUNS = [('Before changes (DAgger init.)', R / 'archive_20260905_pre_variants/legacy_gail_backups/gail_backup_20260905-022910', RUST),
-        ('After, DAgger init.', R / 'archive_20260905_pre_variants/gail_dagger/artifacts', ORANGE),
-        ('After, BC init.', LEG / 'gail_bc', BLUE),
-        ('After, random init.', LEG / 'gail_random', PURPLE)]
+RUNS = [('Before changes (DAgger init.)', P_GAIL[0], RUST),
+        ('After, DAgger init.', P_GAIL[1], ORANGE),
+        ('After, BC init.', P_GAIL[2], BLUE),
+        ('After, random init.', P_GAIL[3], PURPLE)]
 H = []
 for name, d, _ in RUNS:
     for f in d.glob('*training_metrics_iter_*.json'):

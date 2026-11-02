@@ -25,10 +25,9 @@ It writes `fig1_allocation` … `fig6_surfaces` as PDF and PNG, plus `figure_num
 
 ## Inputs
 
-- Tracked: `evaluation/convergence_2026-10-30/deployments.csv` and `training_summary.csv`.
-- Not in Git (large research artifacts; see [REPOSITORY.md](../../REPOSITORY.md)):
-  `experiments/submission_controls/v1/curves/curves.json`,
-  `experiments/consolidated/v1/scratch_v1/evaluation/all_all_correct/comparison.json`,
-  `experiments/submission_controls/v1/evaluation/summary/comparison.json`,
-  the GAIL histories in `experiments/archive_20260905_pre_variants/`, and
-  `artifacts/gail_bc`, `artifacts/gail_random` (override with `--legacy <folder>`).
+By default the script reads tracked files only, so it runs on a fresh clone:
+
+- [`evaluation/paper_inputs/`](../paper_inputs/README.md): copies of the evaluation records it needs (about 6 MB, with SHA-256 checksums).
+- `evaluation/convergence_2026-10-30/deployments.csv` and `training_summary.csv`.
+
+With `--from-experiments` it reads the same records from their original, Git-ignored locations under `experiments/` and `artifacts/` (override the latter with `--legacy <folder>`). Both modes give identical figures and numbers.
