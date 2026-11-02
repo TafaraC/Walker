@@ -8,6 +8,9 @@
 #   --from N  start at clip N (to redo or continue after stopping)
 # Environment: SEED (default 101) sets the targets, the same for every clip;
 #              ALTERED_SLIP (default 10) is the fixed slip for the altered-surface clips.
+# Output: everything shown in the console is also saved to logs/demos/<time>/console.log,
+#         and clips.tsv there records each clip's model, slip, seed, times, status,
+#         targets reached, falls and the viewer's own log folder.
 set -uo pipefail
 SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
 cd "$SCRIPT_DIR"
@@ -60,6 +63,13 @@ for clip in "${CLIPS[@]}"; do
 done
 [ "$missing" = 0 ] || { echo "Fix the labels above (see ./run_viewer.sh --list)." >&2; exit 1; }
 
+RUN_DIR="logs/demos/$(date +%Y%m%d_%H%M%S)"
+mkdir -p "$RUN_DIR"
+SUMMARY="$RUN_DIR/clips.tsv"
+printf 'clip\ttitle\tmodel\tslip\tseed\tstarted\tfinished\tstatus\ttargets\tfalls\tviewer_log\n' > "$SUMMARY"
+exec > >(tee -a "$RUN_DIR/console.log") 2>&1
+echo "Recording session: $RUN_DIR (seed ${SEED}, altered slip ${ALTERED_SLIP}, git $(git rev-parse --short HEAD 2>/dev/null || echo unknown))"
+
 failed=()
 for i in "${!CLIPS[@]}"; do
   n=$((i + 1))
@@ -67,11 +77,27 @@ for i in "${!CLIPS[@]}"; do
   IFS='|' read -r title label slip <<< "${CLIPS[$i]}"
   echo
   echo "=== Clip ${n}/${#CLIPS[@]}: ${title} (seed ${SEED}, slip ${slip}) ==="
-  if ! ./run_viewer.sh --model "$label" --slip "$slip" --seed "$SEED"; then
+  started="$(date '+%Y-%m-%d %H:%M:%S')"
+  clip_log="$RUN_DIR/clip_$(printf '%02d' "$n").log"
+  if ./run_viewer.sh --model "$label" --slip "$slip" --seed "$SEED" 2>&1 | tee "$clip_log"; then
+    status=ok
+  else
+    status=failed
     echo "Clip ${n} failed; continuing. Redo it with: ./record_demos.sh --from ${n}" >&2
     failed+=("$n")
   fi
+  finished="$(date '+%Y-%m-%d %H:%M:%S')"
+  last="$(grep -E '\[Demo\] [0-9]+/[0-9]+ steps' "$clip_log" | tail -1)"
+  targets="$(sed -nE 's/.*targets=([0-9]+).*/\1/p' <<< "$last")"
+  falls="$(sed -nE 's/.*falls=([0-9]+).*/\1/p' <<< "$last")"
+  viewer_log="$(sed -nE 's/^\[Viewer\] Logs: //p' "$clip_log" | tail -1)"
+  printf '%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\n' "$n" "$title" "$label" "$slip" "$SEED" \
+    "$started" "$finished" "$status" "${targets:--}" "${falls:--}" "${viewer_log:--}" >> "$SUMMARY"
+  echo "--- Clip ${n}: ${status}, targets ${targets:--}, falls ${falls:--}"
 done
+echo
+echo "Clip record: $SUMMARY"
+column -t -s $'\t' "$SUMMARY" 2>/dev/null || cat "$SUMMARY"
 
 echo
 if [ ${#failed[@]} -eq 0 ]; then
