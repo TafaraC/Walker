@@ -1,5 +1,7 @@
 # Walker: imitation learning for RoboCup locomotion
 
+[![DOI](https://zenodo.org/badge/1438268704.svg)](https://doi.org/10.5281/zenodo.23884771)
+
 Research repository: [TafaraC/Walker](https://github.com/TafaraC/Walker).
 This project studies behavioural cloning, mixed DAgger and GAIL using the native
 FC Portugal walking controller as an expert, with controlled surface experiments,

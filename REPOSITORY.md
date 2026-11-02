@@ -19,6 +19,12 @@ retained. The original README provides the upstream academic citation.
   `evaluation/FINAL_PAPER_DRAFT.md` is an older paper version;
   the presentation also predates the final extended-fitting analysis.
 
+## Archived versions
+
+Releases of this repository are archived on Zenodo: [doi:10.5281/zenodo.23884771](https://doi.org/10.5281/zenodo.23884771).
+The research data (experiment outputs, datasets and checkpoints) are packaged separately with
+[tools/zenodo](tools/zenodo/README.md); their record DOI will be added here when it is published.
+
 ## What belongs in Git
 
 Source, tests, reports, tables, figures and documentation remain eligible for
