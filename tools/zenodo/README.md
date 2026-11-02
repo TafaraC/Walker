@@ -11,7 +11,7 @@ python3 tools/zenodo/package_data.py plan --repo /path/to/Walker
 python3 tools/zenodo/package_data.py run  --repo /path/to/Walker --out ~/walker_zenodo
 ```
 
-`plan` lists the archives and sizes without writing anything. `run` writes one `.tar.gz` per experiment family (plus `artifacts`, `evaluation_raw`, backups and `models_and_datasets`), with `MANIFEST.tsv`, `SHA256SUMS` and a `README.md` for the record. Caches, virtual environments, compiled binaries, `config.json`, `.env` files and the top-level `logs/` folder are left out (add `--include-logs` to keep `logs/`).
+`plan` lists the archives and sizes without writing anything. `run` writes one `.tar.gz` per experiment family (plus `artifacts`, `evaluation_raw`, backups and `models_and_datasets`); experiment archives larger than 5 GB are split along their subfolders so that each upload stays manageable, with `MANIFEST.tsv`, `SHA256SUMS` and a `README.md` for the record. Caches, virtual environments, compiled binaries, `config.json`, `.env` files and the top-level `logs/` folder are left out (add `--include-logs` to keep `logs/`).
 
 ## 2. Upload
 

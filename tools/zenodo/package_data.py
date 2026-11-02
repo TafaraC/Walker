@@ -31,6 +31,7 @@ SKIP_PARTS = ('__pycache__', '.venv', 'venv', 'env', '.conda', '.pytest_cache',
 SKIP_SUFFIXES = ('.pyc', '.pyo', '.pyd', '.so', '.o', '.a', '.c_info', '.pid', '.lock')
 SKIP_NAMES = ('config.json', '.env', '.coverage')
 ZENODO_MAX_BYTES, ZENODO_MAX_FILES = 50_000_000_000, 100
+SPLIT_BYTES = 5_000_000_000   # archives larger than this are split along subfolders
 
 
 def ignored_files(repo):
@@ -69,6 +70,23 @@ def human(n):
         n /= 1000
 
 
+def split(name, files, depth):
+    """Split a large experiments_* group along the path component at `depth`."""
+    if sum(s for _, s in files) <= SPLIT_BYTES or not name.startswith('experiments_'):
+        return {name: files}
+    sub = OrderedDict()
+    for path, size in files:
+        parts = PurePosixPath(path).parts
+        key = parts[depth] if len(parts) > depth + 1 else '_files'
+        sub.setdefault(key, []).append((path, size))
+    if len(sub) == 1 and '_files' not in sub:      # single subfolder: look one level deeper
+        return split(name, files, depth + 1) if depth < 8 else {name: files}
+    out = {}
+    for key, part in sub.items():
+        out.update(split(f'{name}_{key}', part, depth + 1) if key != '_files' else {f'{name}_files': part})
+    return out
+
+
 def collect(repo, include_logs):
     groups = OrderedDict()
     for path in sorted(ignored_files(repo)):
@@ -77,7 +95,10 @@ def collect(repo, include_logs):
         if name is None or not os.path.isfile(full) or os.path.islink(full):
             continue
         groups.setdefault(name, []).append((path, os.path.getsize(full)))
-    return OrderedDict(sorted(groups.items()))
+    final = {}
+    for name, files in groups.items():
+        final.update(split(name, files, 2))
+    return OrderedDict(sorted(final.items()))
 
 
 def plan(groups):
