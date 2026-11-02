@@ -1,6 +1,11 @@
 # Walker: imitation learning for RoboCup locomotion
 
-[![DOI](https://zenodo.org/badge/1438268704.svg)](https://doi.org/10.5281/zenodo.23884771)
+[![Code DOI](https://zenodo.org/badge/1438268704.svg)](https://doi.org/10.5281/zenodo.23884771)
+[![Data DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23894016.svg)](https://doi.org/10.5281/zenodo.23894016)
+
+- **Code:** archived releases, [doi:10.5281/zenodo.23884771](https://doi.org/10.5281/zenodo.23884771)
+- **Data:** experiment outputs, datasets and checkpoints (about 32 GB), [doi:10.5281/zenodo.23894016](https://doi.org/10.5281/zenodo.23894016)
+- **Video:** walking demos of the expert, learners and controls, [youtu.be/5fa8AXPmhqg](https://youtu.be/5fa8AXPmhqg)
 
 Research repository: [TafaraC/Walker](https://github.com/TafaraC/Walker).
 This project studies behavioural cloning, mixed DAgger and GAIL using the native
@@ -142,8 +147,21 @@ The implementation challenge log and unresolved research risks are maintained in
 
 ## Live walking demo
 
-With SimSpark and RoboViz running, execute `./run_demo.sh` and choose an agent
-by number. Each demo runs 1,500 active steps at 50 Hz (30 seconds, plus startup
+[![Walking demos](https://img.youtube.com/vi/5fa8AXPmhqg/0.jpg)](https://youtu.be/5fa8AXPmhqg)
+
+The [demo video](https://youtu.be/5fa8AXPmhqg) shows 30-second runs of the expert,
+matched-update BC, DAgger, GAIL-BC, the zero-action, untrained-network and
+uniform-random controls on the original field, and BC and the expert at a fixed
+slip of 10, all with the same targets (seed 101). The video description lists the
+exact model running in each segment, with its timestamp, targets reached and falls.
+It was recorded with
+`./record_demos.sh --auto`, which runs the viewer for each clip in turn and saves
+each clip's model, conditions, targets reached and falls under `logs/demos/`.
+The slip-10 runs use a fixed setting, not the paper's sampled evaluation rounds.
+
+To watch a model yourself, start RoboViz and run `./run_viewer.sh` (or
+`./run_viewer.sh --list` to see the available models), or `./run_demo.sh` for the
+original menu. Each demo runs 1,500 active steps at 50 Hz (30 seconds, plus startup
 and any recovery). See [PIPELINES.md](PIPELINES.md) for setup and menu options.
 
 ## Features
