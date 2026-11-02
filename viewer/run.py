@@ -10,23 +10,66 @@ import sys
 import tempfile
 
 ROOT = Path(__file__).resolve().parents[1]
+CONVERGENCE_ROOT = ROOT / 'experiments/convergence_controls/all_v1'
+SUBMISSION_ROOT = ROOT / 'experiments/submission_controls/v1'
+SCRATCH_ROOT = ROOT / 'experiments/consolidated/v1/scratch_v1'
 
 
-def choices(root):
-    from demo_agents import POLICIES
+def receipt_choices(root, prefix='convergence'):
+    """Discover selected checkpoints, retaining recorded architecture and receipt checks.
+
+    Used for the convergence (validation-stopped) batch and the submission controls
+    (matched-update BC, 200-epoch varied-only BC and the zero-action controller)."""
+    from variable_training.common import digest
     result = []
-    for label, kind, model in POLICIES:
-        if kind == 'random':
+    for receipt_path in sorted((root / 'training').glob('*/completed.json')):
+        directory = receipt_path.parent
+        model = directory / 'policy.pth'
+        job_path = directory / 'job.json'
+        if not model.is_file() or not job_path.is_file():
             continue
-        if model is None or (ROOT / model).is_file():
-            result.append((f'historical: {label}', kind,
-                           str(ROOT / model) if model else None, None))
+        receipt = json.loads(receipt_path.read_text())
+        job = json.loads(job_path.read_text())
+        if job.get('task') not in ('control_train', 'random_network', 'zero'):
+            continue
+        if (receipt.get('identity', {}).get('spec') != job or
+                any(receipt.get('files', {}).get(p.name) != digest(p)
+                    for p in (job_path, model))):
+            raise ValueError(f'{prefix} checkpoint/metadata differs from its receipt: {directory}')
+        architecture = job.get('architecture')
+        if architecture not in ('hidden', 'input'):
+            raise ValueError(f'Unknown {prefix} architecture: {directory}')
+        # Supervised BC/DAgger, untrained engine controls and the zero controller all use BCPolicy.
+        result.append((f'{prefix}/{directory.name}', 'bc', str(model), architecture))
+    return result
+
+
+def consolidated_choices(root, prefix=''):
+    result = []
     for path in sorted((root / 'policies').glob('*/*/seed_*/*/final.json')):
         record = json.loads(path.read_text())
         model = Path(record['model'])
         if model.is_file():
-            result.append((str(path.parent.relative_to(root / 'policies')),
+            result.append((prefix + str(path.parent.relative_to(root / 'policies')),
                            record['kind'], str(model), record['architecture']))
+    return result
+
+
+def choices(root, convergence_root=CONVERGENCE_ROOT, submission_root=SUBMISSION_ROOT,
+            scratch_root=SCRATCH_ROOT):
+    from demo_agents import POLICIES
+    result = []
+    for label, kind, model in POLICIES:
+        if kind == 'random' and not (ROOT / 'expert_train_data.npz').is_file():
+            continue  # the uniform-random baseline samples within the expert action range
+        if model is None or (ROOT / model).is_file():
+            result.append((f'historical: {label}', kind,
+                           str(ROOT / model) if model else None, None))
+    result.extend(consolidated_choices(root))
+    if scratch_root.resolve() != root.resolve():
+        result.extend(consolidated_choices(scratch_root, 'scratch/'))
+    result.extend(receipt_choices(convergence_root, 'convergence'))
+    result.extend(receipt_choices(submission_root, 'controls'))
     return result
 
 
@@ -42,13 +85,20 @@ def parse_slip(value):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--root', type=Path, default=ROOT / 'experiments/consolidated/v1')
+    parser.add_argument('--convergence-root', type=Path, default=CONVERGENCE_ROOT,
+                        help='Completed convergence batch to include alongside consolidated models')
+    parser.add_argument('--submission-root', type=Path, default=SUBMISSION_ROOT,
+                        help='Submission controls: matched-update BC, 200-epoch varied-only BC, zero action')
+    parser.add_argument('--scratch-root', type=Path, default=SCRATCH_ROOT,
+                        help='Varied-only (scratch) family, including GAIL from random weights')
     parser.add_argument('--model', help='Exact menu label; omit for interactive selection')
     parser.add_argument('--slip', help='Non-negative scalar slip, or original; omit to select')
     parser.add_argument('--seed', type=int, default=101)
     parser.add_argument('--list', action='store_true', help='List available models without starting a server')
     args = parser.parse_args()
     os.chdir(ROOT)
-    options = choices(args.root.resolve())
+    options = choices(args.root.resolve(), args.convergence_root.resolve(),
+                      args.submission_root.resolve(), args.scratch_root.resolve())
     for i, option in enumerate(options, 1):
         print(f'{i:3}. {option[0]}')
     if args.list:
